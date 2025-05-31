@@ -8,7 +8,7 @@ import React, { useState, FormEvent } from "react";
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard"; // Para onde redirecionar após login
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard"; 
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,16 +19,16 @@ export default function LoginPage() {
     setError(null);
     try {
       const result = await signIn("credentials", {
-        redirect: false, // Importante para tratar o resultado manualmente
+        redirect: false,
         email,
         password,
-        // callbackUrl // NextAuth cuidará do redirecionamento se redirect:true ou se não especificado
+
       });
 
       if (result?.error) {
         setError(result.error === "CredentialsSignin" ? "Email ou senha inválidos." : result.error);
       } else if (result?.ok) {
-        router.push(callbackUrl); // Redireciona após login bem-sucedido
+        router.push(callbackUrl); 
       } else {
         setError("Ocorreu um erro desconhecido durante o login.");
       }
@@ -66,7 +66,6 @@ export default function LoginPage() {
         </div>
         <button type="submit">Entrar</button>
       </form>
-      {/* (Opcional) Link para Registro */}
       <p>Não tem uma conta? <a href="/register">Registre-se</a></p>
     </div>
   );
