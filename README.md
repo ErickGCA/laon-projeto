@@ -94,7 +94,7 @@ recruiting-laon/
 ## 💾 Modelagem do Banco de Dados
 
 <div align="center">
-  <img src="DER.PNG" alt="Modelo Entidade-Relacionamento" width="700"/>
+  <img src="https://raw.githubusercontent.com/ErickGCA/laon-projeto/main/DER.png" alt="Modelo Entidade-Relacionamento" width="700"/>
   <p><em>Diagrama ER com foco em Usuários, Títulos, Gêneros e Diretores</em></p>
 </div>
 
