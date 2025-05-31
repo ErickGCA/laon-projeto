@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Diretor extends Model
 {
     use HasFactory;
+    protected $table = 'diretores'; // ADICIONE ESTA LINHA
 
     protected $fillable = ['nome'];
 
