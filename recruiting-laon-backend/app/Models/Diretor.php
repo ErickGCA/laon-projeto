@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Diretor extends Model
 {
     use HasFactory;
-    protected $table = 'diretores'; // ADICIONE ESTA LINHA
+    protected $table = 'diretores'; // por algum motivo a tabela diretores não estava sendo lida
 
     protected $fillable = ['nome'];
 
