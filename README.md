@@ -2,10 +2,11 @@
 
 <div align="center">
   
-![GitHub repo size](https://img.shields.io/github/repo-size/ErickGCA/recruiting-laon?color=00d4ff&style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/ErickGCA/recruiting-laon?color=ff6b6b&style=for-the-badge)
-![GitHub top language](https://img.shields.io/github/languages/top/ErickGCA/recruiting-laon?color=4ecdc4&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/ErickGCA/recruiting-laon?color=ffd93d&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/ErickGCA/laon-projeto?color=00d4ff&style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/ErickGCA/laon-projeto?color=ff6b6b&style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/ErickGCA/laon-projeto?color=4ecdc4&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/ErickGCA/laon-projeto?color=ffd93d&style=for-the-badge)
+
 
 </div>
 
@@ -25,7 +26,7 @@ A aplicação permite que usuários:
 - 📝 **Visualizem detalhes completos** como sinopse, elenco e avaliações
 - 👨‍💼 **Gerenciem conteúdo** (para administradores)
 
-🔗 **[Figma Design Reference](httpsAQUI_SEU_LINK_PARA_O_FIGMA)** | 📋 **[Postman Collection](AQUI_SEU_LINK_PARA_A_COLLECTION_DO_POSTMAN)**
+🔗 **[Figma Design Reference](https://www.figma.com/design/UNbd6QwutVcqiWoVEtBlCi/Recrutamento?node-id=2-9)** | 📋 **[Postman Collection](https://drive.google.com/file/d/1VzOATnBPGUXW26RavbBMc5rbIl5wsywL/view?usp=drive_link)**
 
 ---
 
@@ -93,7 +94,7 @@ recruiting-laon/
 ## 💾 Modelagem do Banco de Dados
 
 <div align="center">
-  <img src="URL_DA_IMAGEM_DO_SEU_MER_AQUI" alt="Modelo Entidade-Relacionamento" width="700"/>
+  <img src="DER.PNG" alt="Modelo Entidade-Relacionamento" width="700"/>
   <p><em>Diagrama ER com foco em Usuários, Títulos, Gêneros e Diretores</em></p>
 </div>
 
@@ -115,8 +116,8 @@ recruiting-laon/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/ErickGCA/recruiting-laon.git
-cd recruiting-laon/recruiting-laon-backend
+git clone https://github.com/ErickGCA/laon-projeto.git
+cd laon-projeto/recruiting-laon-backend
 
 # Instale dependências
 composer install
@@ -155,7 +156,6 @@ php artisan serve
 
 </div>
 
-📋 **[Collection do Postman disponível aqui](NOME_DO_ARQUIVO_POSTMAN.json)**
 
 ---
 
@@ -289,14 +289,14 @@ Durante o desenvolvimento, enfrentei e superei diversos desafios:
 ## 👨‍💻 Sobre o Desenvolvedor
 
 <div align="center">
-  <img src="https://github.com/ErickGCA_GITHUB.png" width="100" style="border-radius: 50%"/>
+  <img src="https://github.com/ErickGCA" width="100" style="border-radius: 50%"/>
   
   **[Érick Gonçalves Cabral]**
   
   *Desenvolvedor Full Stack apaixonado por criar soluções inovadoras*
   
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ErickGCA_GITHUB)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](SEU_LINKEDIN_AQUI)
+  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ErickGCA)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/erick-cabralgca/)
   
 </div>
 

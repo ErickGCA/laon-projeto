@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "7887d279-c296-4e06-b58e-89133b61cf0e",
+		"name": "Laon Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38361439"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Erick\",\r\n    \"email\": \"erick@gmail.com\",\r\n    \"senha\": \"erick123\",\r\n    \"senha_confirmation\": \"erick123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|bYhNViHBk18h6JAs0dQEmZUwBlVKdSCcMwUz4okf"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //\"nome\": \"Erick\",\r\n    \"email\": \"erick1@gmail.com\",\r\n    \"senha\": \"erick123\"\r\n    //\"senha_confirmation\": \"erick123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Titulos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|bYhNViHBk18h6JAs0dQEmZUwBlVKdSCcMwUz4okf"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //\"nome\": \"Erick\",\r\n    \"email\": \"erick1@gmail.com\",\r\n    \"senha\": \"erick123\"\r\n    //\"senha_confirmation\": \"erick123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Titulos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|bYhNViHBk18h6JAs0dQEmZUwBlVKdSCcMwUz4okf"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/titulos/ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Titulos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|bYhNViHBk18h6JAs0dQEmZUwBlVKdSCcMwUz4okf"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    //\"nome\": \"Erick\",\r\n    \"email\": \"erick1@gmail.com\",\r\n    \"senha\": \"erick123\"\r\n    //\"senha_confirmation\": \"erick123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/titulos/ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Titulos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "2|7aZhBFSh4GJu3QNw4Y2U3AYt5tgbd7bwEYkSq7bR"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo_pt\": \"Meu Filme Incrível\",\r\n    \"tipo\": \"filme\", // \"filme\" ou \"serie\"\r\n    \"ano\": 2025,\r\n    \"sinopse\": \"Uma breve sinopse do filme.\",\r\n    \"elenco\": \"Ator A, Atriz B\",\r\n    \"avaliacao\": 8.5,\r\n    \"capa_url\": \"http://exemplo.com/capa.jpg\",\r\n    \"generos\": [1, 2], // IDs de gêneros que JÁ EXISTEM no banco\r\n    \"diretores\": [1]   // IDs de diretores que JÁ EXISTEM no banco\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/titulos"
+			},
+			"response": []
+		}
+	]
+}
