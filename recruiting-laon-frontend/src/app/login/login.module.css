@@ -1,24 +1,102 @@
-
 .loginPageWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 90vh; 
-  background-color: #f8f9fa; 
+  background-color: #1F1D2F; 
 }
 
 .loginCard {
+
   max-width: 450px;
   width: 100%;
+  background-color: #282639;
+  border-radius: 30px;
 }
 
-.customButton {
 
-  font-weight: bold;
+.customButton {
+  background-color: #fff;
+  color: #000;
+}
+
+.customButton:hover {
+  background-color: #6C63FF;
+  color: #000000;
 }
 
 .errorMessage {
 
   padding: 10px;
   border-radius: 5px;
+}
+
+.titulo{
+  color: #fff;
+  align-items: left;
+  display: flex;
+}
+
+.subtitulo{
+  color: #cccccc;
+  align-items: left;
+  display: flex;
+}
+
+.inputCustom{
+  color: #282639;
+  align-items: left;
+  display: flex;
+}
+
+.emailinput {
+  width: 100%;
+}
+
+.emailinput input {
+  background-color: #282639;
+  border: 1px solid #3F3D4F;
+  color: #fff;
+}
+
+.emailinput input:focus {
+  background-color: #282639;
+  border-color: #6C63FF;
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25);
+}
+
+.emailinput label {
+  color: #aaaaaa;
+}
+
+.senhainput {
+  width: 100%;
+}
+
+.senhainput input {
+  background-color: #282639;
+  border: 1px solid #3F3D4F;
+  color: #fff;
+}
+
+.senhainput input:focus {
+  background-color: #282639;
+  border-color: #6C63FF;
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25);
+}
+
+.senhainput label {
+  color: #aaaaaa;
+}
+
+.customRegister{
+  color: #a8a8a8;
+  margin-left: 70px;
+  text-decoration: none;
+}
+
+.copyright{
+  color: #ffffff;
 }

@@ -37,11 +37,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className={`${styles.loginPageWrapper} d-flex align-items-center py-4 bg-body-tertiary`}> 
+    <div className={`${styles.loginPageWrapper} d-flex align-items-center py-4`}> 
       <main className="form-signin w-100 m-auto" style={{ maxWidth: '400px' }}> 
         <div className={`card shadow-sm ${styles.loginCard}`}> 
           <div className="card-body p-4 p-md-5"> 
-            <h1 className="h3 mb-3 fw-normal text-center">Login</h1> 
+          <h1 className={`${styles.titulo} h3 mb-3 fw-normal text-center`}>Entrar</h1>
+          <p className={`${styles.subtitulo} text-center`}>Bem-vindo de volta!</p>
             
             <form onSubmit={handleSubmit}>
               {error && (
@@ -50,21 +51,21 @@ export default function LoginPage() {
                 </div>
               )}
               
-              <div className="form-floating mb-3"> 
+              <div className={`${styles.emailinput} form-floating mb-3`}>
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  className="form-control" 
+                  className="form-control"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="nome@exemplo.com" 
+                  placeholder="nome@exemplo.com"
                   required
                 />
-                <label htmlFor="email">Email:</label> 
+                <label htmlFor="email">Email</label>
               </div>
               
-              <div className="form-floating mb-3"> 
+              <div className={`${styles.senhainput} form-floating mb-3`}> 
                 <input
                   id="password"
                   name="password"
@@ -75,17 +76,19 @@ export default function LoginPage() {
                   placeholder="Senha" 
                   required
                 />
-                <label htmlFor="password">Senha:</label> 
+                <label htmlFor="password">Senha</label> 
               </div>
               
               <button className={`w-100 btn btn-lg btn-primary ${styles.customButton}`} type="submit"> 
                 Entrar
               </button>
             </form>
-            <p className="mt-3 text-center">
-              Não tem uma conta? <a href="/register">Registre-se</a>
+            <p className={`${styles.titulo} mt-3 text-center`}>
+              Não tem uma conta? <a href="/register" className={`${styles.customRegister}`}>   Registre-se</a>
             </p>
-            <p className="mt-5 mb-3 text-body-secondary text-center">&copy; Laon Labs Challenge</p> 
+            <p className={`mt-5 mb-3 text-body-secondary text-center ${styles.titulo}`}>
+              <span className={`${styles.copyright}`}>&copy;  Laon Labs Challenge </span>
+              </p> 
           </div>
         </div>
       </main>
