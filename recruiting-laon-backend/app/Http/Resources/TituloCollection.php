@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
+class TituloCollection extends ResourceCollection
+{
+    public function toArray($request)
+    {
+        return [
+            'data' => TituloResource::collection($this->collection),
+            'links' => [
+                'self' => url()->current(),
+            ],
+            // Adicionar informações de paginação se estiver usando
+            'meta' => $this->when($this->resource instanceof \Illuminate\Pagination\AbstractPaginator, [
+                'current_page' => $this->resource->currentPage(),
+                'from' => $this->resource->firstItem(),
+                'last_page' => $this->resource->lastPage(),
+                'path' => $this->resource->path(),
+                'per_page' => $this->resource->perPage(),
+                'to' => $this->resource->lastItem(),
+                'total' => $this->resource->total(),
+            ]),
+        ];
+    }
+}

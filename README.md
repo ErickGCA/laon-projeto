@@ -1,36 +1,327 @@
-⚛️ Laon Labs - Teste de recrutamento
-Obrigado por aceitar nosso desafio! A Laon Labs (https://laonlabs.com) é uma software house localizada no congelante sul do Brasil. Nosso objetivo é alavancar empresas de tecnologia e startups através de aplicações fantásticas, não importa o tamanho! E você, como developer, tem papel fundamental nessa missão.
+# 🎬 Recruiting Laon - Catálogo de Filmes e Séries
 
-Instruções
-Esse teste tem como objetivo avaliar os mais diversos níveis de desenvolvedores, além de diferenciar fullstack, backend e frontend developers. Se você travou em alguma das atividades ou não tem conhecimento necessário para avançar, não se preocupe, ainda iremos avaliar seu código de forma objetiva e com carinho, terminar o teste não é um requisito obrigatório;
-Suba todos os projetos em um único repositório público na sua conta do GitHub com o seguinte nome: "recruiting-laon", com as pastas "recruiting-laon-frontend", "recruiting-laon-backend", "recruiting-laon-app" e um README.md com instruções para rodar;
-Após a finalização do desafio, nos envie o link do seu repositório;
-Dúvidas? Entre em contato diretamente conosco ou abra um issue aqui mesmo;
-Dicas importantes
-Busque realizar apenas uma ponta do projeto por vez: modelagem de banco, criação de API e frontend separados;
-Procure usar as melhores práticas de React, Laravel, Javascript, PHP e qualquer outra tecnologia utilizada;
-Criação, modificação e seeder de bancos de dados devem ser colocados em arquivos de migration;
-Refira-se sempre as documentações oficiais;
-Procure por pacotes bem mantidos no NPM;
-Utilize componentes, não repita código e mantenha tudo sempre bem limpo e organizado;
-Valide dados, formulários, informações e pense em segurança.
-🔧 Ideia geral da aplicação
-O objetivo é criar um catálogo de filmes (e possivelmente séries). O usuário poderá se cadastrar na plataforma utilizando nome, email, senha (e quaisquer outros dados que julgar importante). Para visualizar o catálogo, é necessário efetuar o login com credenciais válidas e ativas. Ao entrar, o usuário será recebido com a listagem de títulos disponíveis e ativos na plataforma. Ao clicar em algum deles, o usuário será redirecionado para uma tela com os detalhes do título escolhido. Seja criativo! Adicione quaisquer informações ou funcionalidades que julgar importante pro bom funcionamento da plataforma.
+<div align="center">
+  
+![GitHub repo size](https://img.shields.io/github/repo-size/ErickGCA/recruiting-laon?color=00d4ff&style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/ErickGCA/recruiting-laon?color=ff6b6b&style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/ErickGCA/recruiting-laon?color=4ecdc4&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/ErickGCA/recruiting-laon?color=ffd93d&style=for-the-badge)
 
-🎨 Figma de referência
-Para facilitar, criamos um Figma que servirá como referência para a criação da UI. Fique atento a margens, espaçamentos, tamanhos, fontes, cores e proporções, prezamos sempre por um resultado final fiel ao Figma. Clique aqui para acessar o Figma.
+</div>
 
-💾 Banco de dados
-Utilize MySQL 8. Inicie sempre o desenvolvimento da plataforma pela modelagem do banco de dados. Entenda as funcionalidades da aplicação, seus requisitos e modele um banco em volta do funcionamento da mesma. Seu backend é dependente do banco de dados, portanto, um banco bem modelado se traduz pra uma aplicação dentro dos requisitos. Um print do modelo de entidade-relacionamento do banco no seu repositório nos ajudaria muito na avaliação. (Dica: você pode gerar esse modelo pelo MySQL Workbench).
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D4FF&background=0F0F2300&center=true&vCenter=true&width=600&lines=Plataforma+de+Cat%C3%A1logo+de+Filmes;Desenvolvido+para+Laon+Labs;Laravel+%2B+React+%2B+MySQL" alt="Typing SVG" />
+</div>
 
-🤖 Backend
-Crie uma API para sua plataforma utilizando Laravel 8. Para autenticação, recomendamos Sanctum. Prezamos por um código com separação lógica de blocos, bons padrões de nomenclatura e uma implementação que considera boas práticas para APIs Restful. Se possível, crie uma collection no Postman para testarmos e validarmos os endpoints da sua API. Não esqueça também de manter migrations e seeders atualizados.
+---
 
-💻 Frontend
-Aqui você pode utilizar NextJS ou create-react-app. Temos uma preferência também pela utilização do sistema de grid do Bootstrap (e mais algumas classes úteis do mesmo). Para ícones, a preferência é por Font Awesome. Busque sempre separar lógica de UI, manter seus componentes curtos e limpos e fazer a separação adequada de pastas e classes. Um código limpo nos ajuda a entender melhor sua lógica!
+## ✨ Visão Geral do Projeto
 
-📲 App
-Quer ir um passo adiante? Que tal replicar o frontend em formato de app? Crie a mesma aplicação utilizando sua API em React Native (preferência pela utilização do Expo). Temos no Figma telas de referência para aplicação mobile.
+> **Uma plataforma completa de catálogo de filmes e séries desenvolvida como teste de recrutamento para [Laon Labs](https://laonlabs.com)**
 
-📡 Deploy
-Ainda não está satisfeito? Faça o deploy das aplicações e nos forneça um link! Quem sabe um pipeline pra acompanhar? 😁
+A aplicação permite que usuários:
+- 🔐 **Criem conta e façam login** com autenticação segura
+- 🎥 **Naveguem pelo catálogo** de filmes e séries  
+- 📝 **Visualizem detalhes completos** como sinopse, elenco e avaliações
+- 👨‍💼 **Gerenciem conteúdo** (para administradores)
+
+🔗 **[Figma Design Reference](httpsAQUI_SEU_LINK_PARA_O_FIGMA)** | 📋 **[Postman Collection](AQUI_SEU_LINK_PARA_A_COLLECTION_DO_POSTMAN)**
+
+---
+
+## 🛠️ Stack Tecnológica
+
+<div align="center">
+
+### Backend
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+### Mobile (Opcional)
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+
+</div>
+
+<details>
+<summary>📦 <strong>Lista Completa de Tecnologias</strong></summary>
+
+**Backend:**
+- PHP 8+
+- Laravel 8+ 
+- MySQL 8
+- Laravel Sanctum (autenticação API)
+
+**Frontend:**
+- Node.js
+- Next.js / Create React App
+- React
+- Bootstrap 5  
+- Font Awesome
+
+**Mobile App (Opcional):**
+- React Native
+- Expo
+
+**Ferramentas:**
+- Git & GitHub
+- Composer
+- NPM / Yarn
+- Postman
+- MySQL Workbench
+
+</details>
+
+---
+
+## 🚀 Estrutura do Projeto
+
+```
+recruiting-laon/
+├── 📁 recruiting-laon-backend/    # API RESTful (Laravel)
+├── 📁 recruiting-laon-frontend/   # Interface Web (Next.js/React)  
+└── 📁 recruiting-laon-app/        # App Mobile (React Native)
+```
+
+---
+
+## 💾 Modelagem do Banco de Dados
+
+<div align="center">
+  <img src="URL_DA_IMAGEM_DO_SEU_MER_AQUI" alt="Modelo Entidade-Relacionamento" width="700"/>
+  <p><em>Diagrama ER com foco em Usuários, Títulos, Gêneros e Diretores</em></p>
+</div>
+
+---
+
+## ⚙️ Configuração do Backend
+
+<details>
+<summary>🔧 <strong>Pré-requisitos</strong></summary>
+
+- PHP >= 8.0
+- Composer
+- MySQL 8
+- Servidor Web (Apache/Nginx) ou `php artisan serve`
+
+</details>
+
+### 🚀 Instalação Rápida
+
+```bash
+# Clone o repositório
+git clone https://github.com/ErickGCA/recruiting-laon.git
+cd recruiting-laon/recruiting-laon-backend
+
+# Instale dependências
+composer install
+
+# Configure ambiente
+cp .env.example .env
+# ⚠️ Configure as variáveis do banco no .env
+
+# Gere chave e execute migrations
+php artisan key:generate
+php artisan migrate --seed
+
+# Inicie o servidor
+php artisan serve
+```
+
+> 🌐 **API disponível em:** `http://127.0.0.1:8000/api/`
+
+---
+
+## 🌐 Endpoints da API
+
+<div align="center">
+
+| Método | Endpoint | Descrição | Auth |
+|--------|----------|-----------|------|
+| `POST` | `/api/register` | Registro de usuário | ❌ |
+| `POST` | `/api/login` | Login de usuário | ❌ |
+| `GET` | `/api/user` | Dados do usuário logado | ✅ |
+| `POST` | `/api/logout` | Logout do usuário | ✅ |
+| `GET` | `/api/titulos` | Listar todos os títulos | ✅ |
+| `GET` | `/api/titulos/{id}` | Detalhes de um título | ✅ |
+| `POST` | `/api/titulos` | Criar novo título | 👑 Admin |
+| `PUT` | `/api/titulos/{id}` | Atualizar título | 👑 Admin |
+| `DELETE` | `/api/titulos/{id}` | Remover título | 👑 Admin |
+
+</div>
+
+📋 **[Collection do Postman disponível aqui](NOME_DO_ARQUIVO_POSTMAN.json)**
+
+---
+
+## 🖥️ Configuração do Frontend
+
+<details>
+<summary>🔧 <strong>Pré-requisitos</strong></summary>
+
+- Node.js >= 16.x
+- NPM ou Yarn
+
+</details>
+
+### 🚀 Instalação Rápida
+
+```bash
+# Navegue para o frontend
+cd recruiting-laon-frontend
+
+# Instale dependências
+npm install
+# ou
+yarn install
+
+# Configure variáveis de ambiente
+# Crie .env.local com:
+echo "NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api" > .env.local
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+# ou
+yarn dev
+```
+
+> 🌐 **Aplicação disponível em:** `http://localhost:3000`
+
+---
+
+## 🖼️ Previews da Interface
+
+<div align="center">
+
+### 🔐 Tela de Login
+<img src="URL_DA_IMAGEM_LOGIN_AQUI" alt="Tela de Login" width="400"/>
+
+### 📱 Tela de Listagem  
+<img src="URL_DA_IMAGEM_LISTAGEM_AQUI" alt="Tela de Listagem" width="600"/>
+
+### 📄 Tela de Detalhes
+<img src="URL_DA_IMAGEM_DETALHES_AQUI" alt="Tela de Detalhes" width="600"/>
+
+</div>
+
+---
+
+## 📱 App Mobile (Opcional)
+
+<details>
+<summary>📱 <strong>Configuração React Native + Expo</strong></summary>
+
+### Pré-requisitos
+- Node.js >= 16.x
+- NPM ou Yarn  
+- Expo CLI
+- Emulador Android/iOS ou Expo Go
+
+### Instalação
+```bash
+# Navegue para o app
+cd recruiting-laon-app
+
+# Instale dependências
+npm install
+
+# Inicie o Metro Bundler
+npm start
+```
+
+</details>
+
+---
+
+## 🚀 Deploy
+
+<div align="center">
+
+| Ambiente | Status | Link |
+|----------|--------|------|
+| 🔗 **API Backend** | ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge) | [Link para API](SEU_LINK_DEPLOY_API) |
+| 🌐 **Frontend Web** | ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge) | [Link para Web App](SEU_LINK_DEPLOY_WEB) |
+| 📱 **Mobile App** | ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge) | Em breve |
+
+</div>
+
+---
+
+## 🎯 Funcionalidades Implementadas
+
+- [x] 🔐 **Sistema de Autenticação** (registro/login)
+- [x] 🎥 **Catálogo de Filmes e Séries**
+- [x] 📝 **Detalhes completos dos títulos**
+- [x] 👨‍💼 **Painel administrativo**
+- [x] 🔍 **API RESTful completa**
+- [x] 📱 **Interface responsiva**
+- [ ] 🔍 **Sistema de busca avançada**
+- [ ] ⭐ **Sistema de avaliações**
+- [ ] 📱 **App mobile**
+
+---
+
+## 🤔 Desafios e Aprendizados
+
+Durante o desenvolvimento, enfrentei e superei diversos desafios:
+
+> **🔧 Integração Laravel + React:** Configuração do CORS e autenticação via Sanctum
+> 
+> **📱 Design Responsivo:** Implementação fiel ao design do Figma
+> 
+> **🔐 Segurança:** Validação de dados e proteção de rotas
+> 
+> **📊 Performance:** Otimização de queries e carregamento de dados
+
+**Principais aprendizados:**
+- Aprofundamento em Laravel Sanctum
+- Melhores práticas de estruturação de APIs
+- Integração frontend/backend eficiente
+- Implementação de interfaces responsivas
+
+---
+
+## 👨‍💻 Sobre o Desenvolvedor
+
+<div align="center">
+  <img src="https://github.com/ErickGCA_GITHUB.png" width="100" style="border-radius: 50%"/>
+  
+  **[Érick Gonçalves Cabral]**
+  
+  *Desenvolvedor Full Stack apaixonado por criar soluções inovadoras*
+  
+  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ErickGCA_GITHUB)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](SEU_LINKEDIN_AQUI)
+  
+</div>
+
+---
+
+## 🙏 Agradecimentos
+
+<div align="center">
+  
+**Agradeço à equipe da [Laon Labs](https://laonlabs.com) pela oportunidade de participar deste processo seletivo!**
+
+*Este projeto representa minha dedicação e paixão por desenvolvimento de software.*
+
+---
+
+⭐ **Se este projeto foi útil, considere dar uma estrela!**
+
+</div>
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de avaliação técnica.
+
+---
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=ErickGCA_GITHUB&color=00d4ff&style=for-the-badge" alt="Profile Views"/>
+</div>
