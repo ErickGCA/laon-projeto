@@ -1,0 +1,27 @@
+/* src/app/login/login.module.css */
+.registerPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; /* Para ocupar quase toda a altura da tela */
+  background-color: #f8f9fa; /* Um cinza claro de fundo, como exemplo */
+}
+
+.registerCard {
+  /* O Bootstrap já tem a classe 'card', mas se você quiser customizar mais... */
+  /* Por exemplo, uma largura máxima específica que não seja do grid do Bootstrap */
+  max-width: 450px;
+  width: 100%;
+}
+
+.customButton {
+  /* Se você quiser um estilo de botão que sobrescreva ou complemente o Bootstrap */
+  font-weight: bold;
+}
+
+.errorMessage {
+  /* Você já está usando style={{ color: "red" }}, mas poderia usar uma classe */
+  /* Por exemplo, se quisesse mais estilos além da cor */
+  padding: 10px;
+  border-radius: 5px;
+}

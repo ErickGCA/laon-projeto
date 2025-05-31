@@ -1,2 +1,2 @@
 
-export { GET, POST } from "@/lib/auth"; // Se @ for src/
+export { GET, POST } from "@/lib/auth";

@@ -1,6 +1,12 @@
 // src/app/layout.tsx
-import Providers from "./providers"; // Importe o componente Providers
-import "./globals.css"; // Seus estilos globais
+import Providers from "./providers";
+import "./globals.css"; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+
+export const metadata = { 
+  title: 'Laon Recruiting App',
+  description: 'Desafio de recrutamento Laon Labs',
+};
 
 export default function RootLayout({
   children,
@@ -8,9 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
-        <Providers>{children}</Providers> {/* Envolva os children com Providers */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

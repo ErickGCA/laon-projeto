@@ -1,17 +1,14 @@
 // src/app/dashboard/page.tsx
-import { auth } from "@/lib/auth"; // Ajuste o caminho se @ não for src, ou use relativo
+import { auth } from "@/lib/auth";
 import { redirect } from 'next/navigation';
-import LogoutButton from "@/components/LogoutButton"; // Assumindo que você tem este componente
+import LogoutButton from "@/components/LogoutButton";
 
-// Interface para os dados que você espera da sua API de títulos
 interface Titulo {
   id: number;
   titulo_pt: string;
-  // outras propriedades...
 }
 interface ApiResponseTitulos {
   data: Titulo[];
-  // outras propriedades da paginação...
 }
 
 async function fetchTitulosFromLaravel(accessToken: string): Promise<ApiResponseTitulos | null> {
@@ -21,7 +18,7 @@ async function fetchTitulosFromLaravel(accessToken: string): Promise<ApiResponse
         'Authorization': `Bearer ${accessToken}`,
         'Accept': 'application/json',
       },
-      cache: 'no-store', // Para dados dinâmicos
+      cache: 'no-store',
     });
     if (!res.ok) {
       console.error("Dashboard: Falha ao buscar títulos do Laravel", res.status);
@@ -38,7 +35,7 @@ export default async function DashboardPage() {
   const session = await auth();
 
   if (!session?.user || !session?.accessToken) {
-    redirect('/login'); // Se não estiver logado, vai para o login
+    redirect('/login');
   }
 
   const titulosResponse = await fetchTitulosFromLaravel(session.accessToken);

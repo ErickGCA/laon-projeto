@@ -1,9 +1,10 @@
-// src/app/register/page.tsx
 "use client";
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent } from "react";
+import styles from './register.module.css'; 
+
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -43,22 +44,19 @@ export default function RegisterPage() {
 
       if (res.ok && responseData.access_token) {
         setSuccess("Registro bem-sucedido! Você será redirecionado para o login ou pode logar automaticamente.");
-        // Opcional: Logar automaticamente após o registro
         const loginResult = await signIn('credentials', {
           redirect: false,
           email: email,
-          password: password, // A senha original, não o hash
+          password: password, 
         });
         if (loginResult?.ok) {
-          router.push('/dashboard'); // Ou para onde quiser
+          router.push('/dashboard'); 
         } else {
-          // Se o login automático falhar, redireciona para a página de login manual
           router.push('/login');
         }
       } else {
         setError(responseData.message || "Falha no registro. Verifique os dados.");
         if (responseData.errors) {
-          // Tratar múltiplos erros de validação do Laravel
           const errorMessages = Object.values(responseData.errors).flat().join(' ');
           setError(errorMessages);
         }
@@ -67,31 +65,90 @@ export default function RegisterPage() {
       setError(err.message || "Erro ao tentar registrar.");
     }
   };
-
   return (
-    <div>
-      <h1>Registrar</h1>
-      <form onSubmit={handleSubmit}>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
-        <div>
-          <label htmlFor="nome">Nome:</label>
-          <input id="nome" name="nome" type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
+
+    <div className={`${styles.registerPageWrapper} d-flex align-items-center py-4 bg-body-tertiary`}>
+      <main className="form-signin w-100 m-auto" style={{ maxWidth: '400px' }}> 
+        <div className={`card shadow-sm ${styles.registerCard}`}>
+          <div className="card-body p-4 p-md-5"> 
+            <h1 className="h3 mb-3 fw-normal text-center">Register</h1> 
+            <form onSubmit={handleSubmit}>
+              {error && (
+                <div className={`alert alert-danger ${styles.errorMessage}`} role="alert"> 
+                  {error}
+                </div>
+              )}
+              <div className="form-floating mb-3"> 
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  className="form-control" 
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  placeholder="Nome Completo" 
+                  required
+                />
+                <label htmlFor="nome">Nome Completo:</label> 
+              </div>
+
+              <div className="form-floating mb-3"> 
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="form-control" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="nome@exemplo.com" 
+                  required
+                />
+                <label htmlFor="email">Email:</label>
+              </div>
+              
+              <div className="form-floating mb-3">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  className="form-control" 
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Senha" 
+                  required
+                />
+                <label htmlFor="password">Senha:</label> 
+              </div>
+              <div className="form-floating mb-3"> 
+                <input
+                  id="passwordConfirmation"
+                  name="passwordConfirmation"
+                  type="password"
+                  className="form-control" 
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  placeholder="Confirme sua senha"
+                  required
+                />
+                <label htmlFor="passwordConfirmation">Confirme sua senha:</label> 
+              </div>
+              {success && (
+                <div className={`alert alert-success ${styles.successMessage}`} role="alert"> 
+                  {success}
+                </div>
+              )}
+              
+              <button className={`w-100 btn btn-lg btn-primary ${styles.customButton}`} type="submit"> 
+                Registrar
+              </button>
+            </form>
+            <p className="mt-3 text-center">
+              Já tem a sua conta?? <a href="/login">Faça o login</a>
+            </p>
+            <p className="mt-5 mb-3 text-body-secondary text-center">&copy; Laon Labs Challenge</p> 
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input id="email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <div>
-          <label htmlFor="password">Senha:</label>
-          <input id="password" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </div>
-        <div>
-          <label htmlFor="passwordConfirmation">Confirmar Senha:</label>
-          <input id="passwordConfirmation" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} required />
-        </div>
-        <button type="submit">Registrar</button>
-      </form>
+      </main>
     </div>
   );
 }
