@@ -6,24 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateDiretoresTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('diretores', function (Blueprint $table) {
             $table->id();
+            $table->string('nome')->unique();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('diretores');

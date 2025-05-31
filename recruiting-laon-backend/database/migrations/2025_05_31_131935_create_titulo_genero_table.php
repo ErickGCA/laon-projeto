@@ -6,24 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTituloGeneroTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('titulo_genero', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('titulo_id')->constrained('titulos')->onDelete('cascade');
+            $table->foreignId('genero_id')->constrained('generos')->onDelete('cascade');
+            $table->primary(['titulo_id', 'genero_id']);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('titulo_genero');

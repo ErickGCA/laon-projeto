@@ -13,17 +13,22 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'senha' => 'required|string|min:8|confirmed',
-        ]);
+    $validatedData = $request->validate([ // É bom atribuir a uma variável
+        'nome' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'senha' => 'required|string|min:8|confirmed',
+    ]);
 
-        $user = User::create([
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'senha' => Hash::make($request->senha),
-        ]);
+    $userData = [
+        'nome' => $validatedData['nome'],
+        'email' => $validatedData['email'],
+        'senha' => Hash::make($validatedData['senha']),
+    ];
+
+    //dd($userData); // Descomente para depurar. Isso vai parar a execução e mostrar os dados.
+    \Illuminate\Support\Facades\Log::info('Dados do usuário para criar: ', $userData); // Alternativa com Log
+
+        $user = User::create($userData);
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
@@ -41,7 +46,7 @@ class AuthController extends Controller
             'senha' => 'required|string',
         ]);
 
-        if (!Auth::attempt($request->only('email', 'senha'))) {
+        if (!Auth::attempt(['email' => $request->email, 'password' => $request->senha])) {
              return response()->json(['message' => 'Credenciais inválidas'], 401);
         }
 
