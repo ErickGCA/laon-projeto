@@ -4,6 +4,8 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent } from "react";
 import styles from './register.module.css'; 
+import stylesLogin from '../login/login.module.css';
+
 
 
 export default function RegisterPage() {
@@ -67,18 +69,19 @@ export default function RegisterPage() {
   };
   return (
 
-    <div className={`${styles.registerPageWrapper} d-flex align-items-center py-4 bg-body-tertiary`}>
+    <div className={`${stylesLogin.loginPageWrapper} d-flex align-items-center py-4`}>
       <main className="form-signin w-100 m-auto" style={{ maxWidth: '400px' }}> 
-        <div className={`card shadow-sm ${styles.registerCard}`}>
+        <div className={`card shadow-sm ${stylesLogin.loginCard}`}>
           <div className="card-body p-4 p-md-5"> 
-            <h1 className="h3 mb-3 fw-normal text-center">Register</h1> 
+            <h1 className={`${stylesLogin.titulo} h3 mb-3 fw-normal text-center`}>Cadastre-se</h1> 
+            <p className={`${stylesLogin.subtitulo} text-center`}>Acompanhe os melhores filmes e séries</p>
             <form onSubmit={handleSubmit}>
               {error && (
                 <div className={`alert alert-danger ${styles.errorMessage}`} role="alert"> 
                   {error}
                 </div>
               )}
-              <div className="form-floating mb-3"> 
+              <div className={`${stylesLogin.emailinput} form-floating mb-3`}>  
                 <input
                   id="nome"
                   name="nome"
@@ -92,7 +95,7 @@ export default function RegisterPage() {
                 <label htmlFor="nome">Nome Completo:</label> 
               </div>
 
-              <div className="form-floating mb-3"> 
+              <div className={`${stylesLogin.emailinput} form-floating mb-3`}> 
                 <input
                   id="email"
                   name="email"
@@ -106,7 +109,7 @@ export default function RegisterPage() {
                 <label htmlFor="email">Email:</label>
               </div>
               
-              <div className="form-floating mb-3">
+              <div className= {`${stylesLogin.senhainput} form-floating mb-3`}>
                 <input
                   id="password"
                   name="password"
@@ -119,7 +122,7 @@ export default function RegisterPage() {
                 />
                 <label htmlFor="password">Senha:</label> 
               </div>
-              <div className="form-floating mb-3"> 
+              <div className= {`${stylesLogin.senhainput} form-floating mb-3`}> 
                 <input
                   id="passwordConfirmation"
                   name="passwordConfirmation"
@@ -138,14 +141,16 @@ export default function RegisterPage() {
                 </div>
               )}
               
-              <button className={`w-100 btn btn-lg btn-primary ${styles.customButton}`} type="submit"> 
+              <button className={`w-100 btn btn-lg btn-primary ${stylesLogin.customButton}`} type="submit"> 
                 Registrar
               </button>
             </form>
-            <p className="mt-3 text-center">
-              Já tem a sua conta?? <a href="/login">Faça o login</a>
+            <p className={`${stylesLogin.titulo} mt-3 text-center`}>
+              Já tem a sua conta? <a href="/login" className={`${stylesLogin.customRegister}`}>Faça o login</a>
             </p>
-            <p className="mt-5 mb-3 text-body-secondary text-center">&copy; Laon Labs Challenge</p> 
+            <p className={`mt-5 mb-3 text-body-secondary text-center ${stylesLogin.titulo}`}>
+              <span className={`${stylesLogin.copyright}`}>&copy;  Laon Labs Challenge </span>
+              </p> 
           </div>
         </div>
       </main>
