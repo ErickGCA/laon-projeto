@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Genero; // Certifique-se que o namespace do seu Model Genero está correto
+use App\Models\Genero; 
 
 class GeneroSeeder extends Seeder
 {

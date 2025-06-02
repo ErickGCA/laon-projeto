@@ -18,8 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GeneroSeeder::class,
             DiretorSeeder::class,
-            // Adicione aqui o TituloSeeder se/quando você o criar
-            // Ex: TituloSeeder::class,
+            TituloSeeder::class,
         ]);
     }
 }
