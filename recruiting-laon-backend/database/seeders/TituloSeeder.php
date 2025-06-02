@@ -16,7 +16,7 @@ class TituloSeeder extends Seeder
      */
     public function run()
     {
-        // Gêneros buscados (certifique-se que existem no GeneroSeeder)
+                
         $acao = Genero::where('nome', 'Ação')->first();
         $aventura = Genero::where('nome', 'Aventura')->first();
         $comedia = Genero::where('nome', 'Comédia')->first();
@@ -24,16 +24,12 @@ class TituloSeeder extends Seeder
         $fc = Genero::where('nome', 'Ficção Científica')->first();
         $suspense = Genero::where('nome', 'Suspense')->first();
         $terror = Genero::where('nome', 'Terror')->first();
-        // Adicione mais gêneros conforme necessário
 
-        // Diretores buscados (certifique-se que existem no DiretorSeeder)
         $nolan = Diretor::where('nome', 'Christopher Nolan')->first();
         $tarantino = Diretor::where('nome', 'Quentin Tarantino')->first();
         $spielberg = Diretor::where('nome', 'Steven Spielberg')->first();
         $villeneuve = Diretor::where('nome', 'Denis Villeneuve')->first();
-        // Adicione mais diretores conforme necessário
 
-        // --- SEUS TÍTULOS EXISTENTES ---
         $titulo1 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Jojo Rabbit'],
             [
@@ -90,9 +86,7 @@ class TituloSeeder extends Seeder
         );
         if ($serie1 && $drama) $serie1->generos()->syncWithoutDetaching([$drama->id]);
 
-        // --- NOVOS TÍTULOS ADICIONADOS ---
 
-        // Filme 3
         $titulo3 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Interestelar'],
             [
@@ -112,7 +106,6 @@ class TituloSeeder extends Seeder
         if ($titulo3 && $drama) $titulo3->generos()->syncWithoutDetaching([$drama->id]);
         if ($titulo3 && $nolan) $titulo3->diretores()->syncWithoutDetaching([$nolan->id]);
 
-        // Filme 4
         $titulo4 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Pulp Fiction: Tempo de Violência'],
             [
@@ -127,11 +120,9 @@ class TituloSeeder extends Seeder
                 'capa_url' => 'posters/pulp_fiction_poster.jpg',
             ]
         );
-        if ($titulo4 && $drama) $titulo4->generos()->syncWithoutDetaching([$drama->id]); // Drama também é um gênero forte aqui
-        // Pulp Fiction é bem Crime, mas Drama serve. Se tiver 'Crime', adicione.
+        if ($titulo4 && $drama) $titulo4->generos()->syncWithoutDetaching([$drama->id]); 
         if ($titulo4 && $tarantino) $titulo4->diretores()->syncWithoutDetaching([$tarantino->id]);
 
-        // Série 2
         $serie2 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Stranger Things'],
             [
@@ -141,8 +132,8 @@ class TituloSeeder extends Seeder
                 'sinopse' => 'Quando um garoto desaparece, sua mãe, um chefe de polícia e seus amigos devem confrontar forças sobrenaturais aterrorizantes para trazê-lo de volta.',
                 'elenco' => 'Millie Bobby Brown, Finn Wolfhard, Winona Ryder',
                 'avaliacao' => 8.7,
-                'estado_serie' => 'em andamento', // Ou 'finalizada' dependendo de quando você está lendo isso
-                'numero_temporadas' => 4, // Ajuste conforme a realidade
+                'estado_serie' => 'em andamento', 
+                'numero_temporadas' => 4, 
                 'idioma' => 'Inglês',
                 'capa_url' => 'posters/stranger_things_poster.jpg',
             ]
@@ -152,7 +143,6 @@ class TituloSeeder extends Seeder
         if ($serie2 && $terror) $serie2->generos()->syncWithoutDetaching([$terror->id]);
 
 
-        // Filme 5
         $titulo5 = Titulo::firstOrCreate(
             ['titulo_pt' => 'O Poderoso Chefão'],
             [
@@ -168,9 +158,7 @@ class TituloSeeder extends Seeder
             ]
         );
         if ($titulo5 && $drama) $titulo5->generos()->syncWithoutDetaching([$drama->id]);
-        // Se tiver 'Crime', adicione.
 
-        // Filme 6
         $titulo6 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Duna'],
             [
@@ -190,7 +178,6 @@ class TituloSeeder extends Seeder
         if ($titulo6 && $drama) $titulo6->generos()->syncWithoutDetaching([$drama->id]);
         if ($titulo6 && $villeneuve) $titulo6->diretores()->syncWithoutDetaching([$villeneuve->id]);
 
-        // Série 3
         $serie3 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Breaking Bad: A Química do Mal'],
             [   
@@ -209,9 +196,7 @@ class TituloSeeder extends Seeder
         );
         if ($serie3 && $drama) $serie3->generos()->syncWithoutDetaching([$drama->id]);
         if ($serie3 && $suspense) $serie3->generos()->syncWithoutDetaching([$suspense->id]);
-        // Se tiver 'Crime' ou 'Thriller', adicione.
 
-        // Filme 7
         $titulo7 = Titulo::firstOrCreate(
             ['titulo_pt' => 'A Lista de Schindler'],
             [
@@ -227,10 +212,8 @@ class TituloSeeder extends Seeder
             ]
         );
         if ($titulo7 && $drama) $titulo7->generos()->syncWithoutDetaching([$drama->id]);
-        // Se tiver 'Biografia' ou 'História', adicione.
         if ($titulo7 && $spielberg) $titulo7->diretores()->syncWithoutDetaching([$spielberg->id]);
 
-        // Filme 8
         $titulo8 = Titulo::firstOrCreate(
             ['titulo_pt' => 'Parasita'],
             [
@@ -247,9 +230,7 @@ class TituloSeeder extends Seeder
         );
         if ($titulo8 && $drama) $titulo8->generos()->syncWithoutDetaching([$drama->id]);
         if ($titulo8 && $suspense) $titulo8->generos()->syncWithoutDetaching([$suspense->id]);
-        // Se tiver 'Comédia Sombria', adicione. (Bong Joon-ho é o diretor)
 
-        // Série 4
         $serie4 = Titulo::firstOrCreate(
             ['titulo_pt' => 'The Mandalorian'],
             [
@@ -259,7 +240,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Pedro Pascal',
                 'avaliacao' => 8.7,
                 'estado_serie' => 'em andamento',
-                'numero_temporadas' => 3, // Ajuste conforme a realidade
+                'numero_temporadas' => 3, 
                 'idioma' => 'Inglês',
                 'capa_url' => 'posters/the_mandalorian_poster.jpg',
             ]
@@ -268,7 +249,6 @@ class TituloSeeder extends Seeder
         if ($serie4 && $aventura) $serie4->generos()->syncWithoutDetaching([$aventura->id]);
         if ($serie4 && $fc) $serie4->generos()->syncWithoutDetaching([$fc->id]);
 
-        // Filme 9 (Animação)
         $titulo9 = Titulo::firstOrCreate(
             ['titulo_pt' => 'A Viagem de Chihiro'],
             [

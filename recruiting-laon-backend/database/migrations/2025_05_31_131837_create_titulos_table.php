@@ -13,6 +13,8 @@ class CreateTitulosTable extends Migration
             $table->enum('tipo', ['filme', 'serie']);
             $table->string('titulo_original')->nullable();
             $table->string('titulo_pt');
+            $table->string('trailer_url')->nullable();
+            $table->string('duracao')->nullable();
             $table->year('ano')->nullable();
             $table->text('sinopse')->nullable();
             $table->text('elenco')->nullable();

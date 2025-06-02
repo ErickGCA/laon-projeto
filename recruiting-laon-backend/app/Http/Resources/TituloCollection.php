@@ -13,7 +13,7 @@ class TituloCollection extends ResourceCollection
             'links' => [
                 'self' => url()->current(),
             ],
-            // Adicionar informações de paginação se estiver usando
+             
             'meta' => $this->when($this->resource instanceof \Illuminate\Pagination\AbstractPaginator, [
                 'current_page' => $this->resource->currentPage(),
                 'from' => $this->resource->firstItem(),

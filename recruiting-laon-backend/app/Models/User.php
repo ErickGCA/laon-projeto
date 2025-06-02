@@ -16,6 +16,7 @@ class User extends Authenticatable
         'nome',
         'email',
         'senha',
+        'is_admin',
     ];
 
     protected $hidden = [
@@ -25,10 +26,16 @@ class User extends Authenticatable
 
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean',
     ];
 
     public function getAuthPassword()
     {
         return $this->senha;
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->is_admin;
     }
 }
