@@ -17,7 +17,7 @@ class DiretorSeeder extends Seeder
         $instanciaDiretor = new Diretor();
         $nomeDaTabelaQueOMODELUsa = $instanciaDiretor->getTable();
 
-        dd('O Model Diretor acha que a tabela se chama: ' . $nomeDaTabelaQueOMODELUsa);
+
 
         Diretor::firstOrCreate(['nome' => 'Christopher Nolan']);
         Diretor::firstOrCreate(['nome' => 'Quentin Tarantino']);
@@ -26,6 +26,8 @@ class DiretorSeeder extends Seeder
         Diretor::firstOrCreate(['nome' => 'Martin Scorsese']);
         Diretor::firstOrCreate(['nome' => 'Steven Spielberg']);
         Diretor::firstOrCreate(['nome' => 'James Cameron']);
+        Diretor::firstOrCreate(['nome' => 'Hayao Miyazaki']);
+        Diretor::firstOrCreate(['nome' => 'Taika Waititi']);
         Diretor::firstOrCreate(['nome' => 'Hayao Miyazaki']);
     }
 }

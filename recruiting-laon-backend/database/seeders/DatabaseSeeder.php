@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create(); // Se quiser usuários de fábrica
+        // \App\Models\User::factory(10)->create(); 
 
         $this->call([
             GeneroSeeder::class,

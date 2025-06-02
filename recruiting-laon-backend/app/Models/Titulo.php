@@ -14,14 +14,16 @@ class Titulo extends Model
         'titulo_original',
         'titulo_pt',
         'ano',
+        'duracao',
         'sinopse',
         'elenco',
         'premios',
+        'trailer_url',
         'avaliacao',
         'estado_serie',
         'numero_temporadas',
         'idioma',
-        'capa_url', // Adicionado para a imagem da capa
+        'capa_url', 
     ];
 
     protected $casts = [

@@ -14,9 +14,11 @@ class TituloResource extends JsonResource
             'titulo_original' => $this->titulo_original,
             'titulo_pt' => $this->titulo_pt,
             'ano' => $this->ano,
+            'duracao' => $this->duracao,
             'sinopse' => $this->sinopse,
-            'elenco' => $this->elenco, // Pode ser uma string separada por vírgulas ou JSON
+            'elenco' => $this->elenco, 
             'premios' => $this->premios,
+            'trailer_url' => $this->trailer_url,
             'avaliacao' => (float) $this->avaliacao,
             'estado_serie' => $this->when($this->tipo === 'serie', $this->estado_serie),
             'numero_temporadas' => $this->when($this->tipo === 'serie', $this->numero_temporadas),

@@ -24,5 +24,6 @@ class GeneroSeeder extends Seeder
         Genero::firstOrCreate(['nome' => 'Animação']);
         Genero::firstOrCreate(['nome' => 'Documentário']);
         Genero::firstOrCreate(['nome' => 'Aventura']);
+        Genero::firstOrCreate(['nome' => 'Fantasia']);
     }
 }
