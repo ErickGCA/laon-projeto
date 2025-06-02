@@ -1,0 +1,32 @@
+/* header.module.css */
+.header {
+  display: flex; 
+  align-items: center; 
+  padding: 0 50px;
+  height: 100px;
+  position: relative; 
+  background-color: #1c1b2b; 
+}
+
+.title {
+  flex: 10; 
+
+  text-align: center;
+  font-size: 2rem; 
+  color: #fff;
+}
+
+
+.backButton {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px; 
+  padding: 10px 15px;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+
+}

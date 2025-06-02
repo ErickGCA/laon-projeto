@@ -22,11 +22,10 @@ export default function LogoutButton() {
         console.error("Erro ao fazer logout no backend Laravel:", error);
       }
     }
-    // Faz o logout no NextAuth.js (limpa a sessão do frontend)
-    await signOut({ callbackUrl: "/login" }); // Redireciona para login após sair
+    await signOut({ callbackUrl: "/login" }); 
   };
 
-  if (!session) return null; // Não mostra o botão se não estiver logado
+  if (!session) return null; 
 
   return <button onClick={handleLogout}>Sair</button>;
 }
