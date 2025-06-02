@@ -8,7 +8,7 @@ import styles from './login.module.css';
 export default function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+  const callbackUrl = searchParams?.get("callbackUrl") || "/dashboard";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +27,14 @@ export default function LoginPage() {
       if (result?.error) {
         setError(result.error === "CredentialsSignin" ? "Email ou senha inválidos." : result.error);
       } else if (result?.ok) {
-        router.push(callbackUrl);
+        // Buscar a sessão para saber se é admin
+        const sessionRes = await fetch("/api/auth/session");
+        const session = await sessionRes.json();
+        if (session?.user?.isAdmin) {
+          router.push("/admin/dashboard");
+        } else {
+          router.push(callbackUrl);
+        }
       } else {
         setError("Ocorreu um erro desconhecido durante o login.");
       }
