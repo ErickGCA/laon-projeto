@@ -31,7 +31,7 @@ class TituloController extends Controller
      */
     public function store(Request $request)
     {
-        // Verifica se o usuário autenticado pode 'manage-titles'
+
         if (! Gate::allows('manage-titles')) {
             return response()->json(['message' => 'Não autorizado. Apenas administradores podem criar títulos.'], 403);
         }
@@ -41,8 +41,8 @@ class TituloController extends Controller
             'tipo' => 'required|in:filme,serie',
             'ano' => 'nullable|integer|digits:4',
             'avaliacao' => 'nullable|numeric|min:0|max:10',
-            'duracao' => 'nullable|string|max:100', // Adicionado para consistência com o resource
-            'trailer_url' => 'nullable|url|max:500', // Adicionado
+            'duracao' => 'nullable|string|max:100', 
+            'trailer_url' => 'nullable|url|max:500', 
             'generos' => 'nullable|array',
             'generos.*' => 'integer|exists:generos,id',
             'diretores' => 'nullable|array',
@@ -64,7 +64,7 @@ class TituloController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-        // Lembre-se de adicionar 'duracao' e 'trailer_url' ao $fillable do Model Titulo
+
         $titulo = Titulo::create($request->only([
             'titulo_pt', 'titulo_original', 'tipo', 'ano', 'sinopse', 'elenco',
             'premios', 'avaliacao', 'estado_serie', 'numero_temporadas', 'idioma', 'capa_url',
@@ -89,7 +89,7 @@ class TituloController extends Controller
      */
     public function show(Titulo $titulo)
     {
-        // Qualquer usuário logado pode ver detalhes de um título
+
         return new TituloResource($titulo->load(['generos', 'diretores']));
     }
 
@@ -133,9 +133,8 @@ class TituloController extends Controller
         if ($request->has('generos')) {
             $titulo->generos()->sync($request->generos);
         } else {
-            // Se o campo 'generos' não for enviado, mas você quiser remover todos os gêneros existentes:
+
             // $titulo->generos()->sync([]); 
-            // Ou, se quiser manter os existentes se o campo não for enviado, não faça nada.
         }
 
         if ($request->has('diretores')) {
