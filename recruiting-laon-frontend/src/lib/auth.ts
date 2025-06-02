@@ -1,14 +1,13 @@
-// auth.ts
 import NextAuth from 'next-auth';
-import { authConfig } from './auth.config'; // Importa sua configuração
+import { authConfig } from './auth.config'; 
 
 export const {
-  handlers: { GET, POST }, // Handlers para a rota da API
-  auth,                   // Para usar em server components/actions e middleware
-  signIn,                 // Função para iniciar o login
-  signOut,                // Função para fazer logout
+  handlers: { GET, POST }, 
+  auth,                   
+  signIn,                 
+  signOut,                
 } = NextAuth({
-  ...authConfig, // Usa sua configuração de provedores, páginas e callbacks
+  ...authConfig, 
   session: { strategy: "jwt" },
   secret: process.env.AUTH_SECRET,
 });
