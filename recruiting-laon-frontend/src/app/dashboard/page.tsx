@@ -90,10 +90,7 @@ export default async function DashboardPage() {
         {series.length > 0 && <TitulosRow tituloSecao="Séries" titulos={series} />}
       </main>
 
-      <footer className="mt-auto py-3 text-center text-white-50">
-        {/* Adapte com os links e logos do rodapé do Figma */}
-        <p className="mb-0">&copy; {new Date().getFullYear()} Laon Labs Challenge. Feito por Erick.</p>
-      </footer>
+
     </div>
   );
 }

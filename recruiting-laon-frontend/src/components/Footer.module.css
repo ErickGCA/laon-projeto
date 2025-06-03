@@ -1,0 +1,122 @@
+/* src/components/Footer.module.css */
+.footer {
+    background-color: #1F1D2F; /* Cor de fundo escura do Figma */
+    color: #a0a0b0; /* Cor de texto padrão para o rodapé (cinza claro) */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid #2a2a38; /* Linha sutil acima, se desejar */
+    font-size: 0.9rem;
+  }
+  
+
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para quebrar em telas menores */
+    gap: 20px; /* Espaço entre os blocos */
+    margin-bottom: 20px;
+  }
+  
+
+  
+  .logoLink {
+    text-decoration: none;
+    display: flex; /* Para alinhar "LAON" e "STREAMING" se forem spans separados */
+    flex-direction: column; /* Ou row, dependendo do design do logo */
+    align-items: flex-start;
+  }
+  
+  .logoText {
+    font-size: 1.8rem; /* Ajuste conforme o logo */
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .logoTextStreaming {
+    font-size: 0.7rem;
+    color: #aaa; /* Cor mais suave para "STREAMING" */
+    letter-spacing: 3px; /* Espaçamento como no Figma */
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  
+  
+  .footerNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px; /* Espaço entre os links */
+    justify-content: center; /* Centraliza os links se quebrar linha */
+  }
+  
+  .footerLink {
+    color: #a0a0b0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footerLink:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .footerSocial {
+    display: flex;
+    gap: 15px; /* Espaço entre os ícones sociais */
+  }
+  
+  .socialIcon {
+    color: #a0a0b0;
+    font-size: 1.2rem; /* Tamanho do placeholder de texto, ajuste se usar ícones reais */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    border: 1px solid #a0a0b0; /* Borda como no Figma */
+    border-radius: 50%;
+    width: 36px; /* Tamanho do círculo */
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .socialIcon:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+  
+  .footerCopyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a38; /* Linha sutil acima do copyright */
+  }
+  
+  /* Media query para telas menores, se necessário */
+  @media (max-width: 768px) {
+    .footerContent {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footerNav {
+      justify-content: center;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .footerSocial {
+      justify-content: center;
+    }
+    .footerLogoSection {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .logoLink {
+      align-items: center;
+    }
+  }
+  

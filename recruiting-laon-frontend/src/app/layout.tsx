@@ -1,6 +1,7 @@
-
+// src/app/layout.tsx
 import Providers from "./providers";
 import Header from "@/components/Header"; 
+import Footer from "@/components/Footer"; // <<< IMPORTE SEU FOOTER GLOBAL
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -16,11 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>
-        <Providers> 
-          <Header /> 
-          <main>{children}</main> 
-          
+      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}> 
+        <Providers>
+          <Header />
+          <main style={{ flexGrow: 1 }}> 
+            {children}
+          </main>
+          <Footer /> 
         </Providers>
       </body>
     </html>

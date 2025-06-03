@@ -148,9 +148,7 @@ export default async function TituloDetalhesPage({ params }: { params: { id: str
         </div>
       </main>
 
-      <footer className={styles.footerDetalhes}>
-        <p>&copy; {new Date().getFullYear()} Laon Streaming</p>
-      </footer>
+
     </div>
   );
 }
