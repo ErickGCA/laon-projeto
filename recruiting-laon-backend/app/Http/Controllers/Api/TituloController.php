@@ -8,155 +8,146 @@ use Illuminate\Http\Request;
 use App\Http\Resources\TituloResource;
 use App\Http\Resources\TituloCollection;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Gate; // Importe o Gate facade
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage; // Para lidar com arquivos
 
 class TituloController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \App\Http\Resources\TituloCollection
-     */
     public function index()
     {
-        // Qualquer usuário logado pode listar os títulos
         return new TituloCollection(Titulo::with(['generos', 'diretores'])->paginate(10));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response|\App\Http\Resources\TituloResource
-     */
     public function store(Request $request)
     {
-
-        if (! Gate::allows('manage-titles')) {
-            return response()->json(['message' => 'Não autorizado. Apenas administradores podem criar títulos.'], 403);
+        if (!Gate::allows('manage-titles')) {
+            return response()->json(['message' => 'Não autorizado.'], 403);
         }
 
         $validator = Validator::make($request->all(), [
             'titulo_pt' => 'required|string|max:255',
             'tipo' => 'required|in:filme,serie',
             'ano' => 'nullable|integer|digits:4',
+            'sinopse' => 'nullable|string',
+            'elenco' => 'nullable|string',
+            'premios' => 'nullable|string',
             'avaliacao' => 'nullable|numeric|min:0|max:10',
-            'duracao' => 'nullable|string|max:100', 
-            'trailer_url' => 'nullable|url|max:500', 
+            'duracao' => 'nullable|string|max:100',
+            'trailer_url' => 'nullable|url|max:500',
+            'estado_serie' => 'nullable|in:finalizada,cancelada,em andamento,piloto',
+            'numero_temporadas' => 'nullable|integer|min:1',
+            'idioma' => 'nullable|string|max:50',
             'generos' => 'nullable|array',
             'generos.*' => 'integer|exists:generos,id',
             'diretores' => 'nullable|array',
             'diretores.*' => 'integer|exists:diretores,id',
-            'capa_url' => 'nullable|image|mimes:jpg,png,jpeg|max:2048', // Mudado de 'url' para 'string' se for apenas o caminho relativo
-                                                   // Se for uma URL completa, mantenha 'url'.
-                                                   // Se for upload de arquivo, a validação será diferente.
-            // Adicione validações para outros campos se necessário:
-            // 'titulo_original' => 'nullable|string|max:255',
-            // 'sinopse' => 'nullable|string',
-            // 'elenco' => 'nullable|string',
-            // 'premios' => 'nullable|string',
-            // 'estado_serie' => 'nullable|in:finalizada,cancelada,em andamento,piloto',
-            // 'numero_temporadas' => 'nullable|integer|min:1',
-            // 'idioma' => 'nullable|string|max:50',
+            // Validação para o upload da imagem da capa
+            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 'capa_imagem' é o nome do campo do arquivo
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
+        $data = $request->except(['capa_imagem', 'generos', 'diretores']);
 
-        $titulo = Titulo::create($request->only([
-            'titulo_pt', 'titulo_original', 'tipo', 'ano', 'sinopse', 'elenco',
-            'premios', 'avaliacao', 'estado_serie', 'numero_temporadas', 'idioma', 'capa_url',
-            'duracao', 'trailer_url' // Adicionados
-        ]));
-
-        if ($request->has('generos')) {
-            $titulo->generos()->sync($request->generos);
+        if ($request->hasFile('capa_imagem')) {
+            // Salva a imagem em storage/app/public/posters e obtém o caminho
+            $path = $request->file('capa_imagem')->store('posters', 'public');
+            $data['capa_url'] = $path; // Salva o caminho relativo (ex: posters/arquivo.jpg)
         }
-        if ($request->has('diretores')) {
-            $titulo->diretores()->sync($request->diretores);
+
+        $titulo = Titulo::create($data);
+
+        if ($request->filled('generos')) {
+            $titulo->generos()->sync($request->input('generos', []));
+        }
+        if ($request->filled('diretores')) {
+            $titulo->diretores()->sync($request->input('diretores', []));
         }
 
         return new TituloResource($titulo->load(['generos', 'diretores']));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Titulo  $titulo
-     * @return \App\Http\Resources\TituloResource
-     */
     public function show(Titulo $titulo)
     {
-
         return new TituloResource($titulo->load(['generos', 'diretores']));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Titulo  $titulo
-     * @return \Illuminate\Http\Response|\App\Http\Resources\TituloResource
-     */
     public function update(Request $request, Titulo $titulo)
     {
-        if (! Gate::allows('manage-titles')) {
-            return response()->json(['message' => 'Não autorizado. Apenas administradores podem atualizar títulos.'], 403);
+        if (!Gate::allows('manage-titles')) {
+            return response()->json(['message' => 'Não autorizado.'], 403);
         }
+
+        // Nota: O Laravel não lida bem com arquivos (PUT/PATCH) via x-www-form-urlencoded por padrão.
+        // Para uploads em updates, o frontend geralmente envia um POST com um campo _method='PUT'.
+        // Ou você pode criar um endpoint dedicado como /api/titulos/{id}/update-com-capa
+        // Para simplificar aqui, vamos assumir que a capa_url pode ser uma string (caminho existente)
+        // ou um novo upload (capa_imagem).
 
         $validator = Validator::make($request->all(), [
             'titulo_pt' => 'sometimes|required|string|max:255',
             'tipo' => 'sometimes|required|in:filme,serie',
+            // ... outras validações como no store ...
             'ano' => 'nullable|integer|digits:4',
+            'sinopse' => 'nullable|string',
+            'elenco' => 'nullable|string',
+            'premios' => 'nullable|string',
             'avaliacao' => 'nullable|numeric|min:0|max:10',
             'duracao' => 'nullable|string|max:100',
             'trailer_url' => 'nullable|url|max:500',
+            'estado_serie' => 'nullable|in:finalizada,cancelada,em andamento,piloto',
+            'numero_temporadas' => 'nullable|integer|min:1',
+            'idioma' => 'nullable|string|max:50',
             'generos' => 'nullable|array',
             'generos.*' => 'integer|exists:generos,id',
             'diretores' => 'nullable|array',
             'diretores.*' => 'integer|exists:diretores,id',
-            'capa_url' => 'nullable|image|mimes:jpg,png,jpeg|max:2048', // Mesma observação do store
+            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Para nova imagem
+            'capa_url' => 'nullable|string|max:255', // Para manter/definir caminho existente
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
-        $titulo->update($request->only([
-            'titulo_pt', 'titulo_original', 'tipo', 'ano', 'sinopse', 'elenco',
-            'premios', 'avaliacao', 'estado_serie', 'numero_temporadas', 'idioma', 'capa_url',
-            'duracao', 'trailer_url'
-        ]));
+        $data = $request->except(['capa_imagem', '_method', 'generos', 'diretores']); // _method se estiver usando POST para simular PUT
 
-        if ($request->has('generos')) {
-            $titulo->generos()->sync($request->generos);
-        } else {
-
-            // $titulo->generos()->sync([]); 
+        if ($request->hasFile('capa_imagem')) {
+            // Deletar a imagem antiga se existir e uma nova for enviada
+            if ($titulo->capa_url) {
+                Storage::disk('public')->delete($titulo->capa_url);
+            }
+            $path = $request->file('capa_imagem')->store('posters', 'public');
+            $data['capa_url'] = $path;
+        } elseif ($request->filled('capa_url')) {
+            // Se capa_imagem não foi enviada, mas capa_url sim (para manter ou mudar para um path existente)
+            $data['capa_url'] = $request->input('capa_url');
         }
+        // Se nem capa_imagem nem capa_url forem enviados, capa_url existente no $titulo é mantido.
 
+        $titulo->update($data);
+
+        if ($request->has('generos')) { // Usar has() para permitir array vazio para desvincular
+            $titulo->generos()->sync($request->input('generos', []));
+        }
         if ($request->has('diretores')) {
-            $titulo->diretores()->sync($request->diretores);
-        } else {
-            // Mesma lógica para diretores
-            // $titulo->diretores()->sync([]);
+            $titulo->diretores()->sync($request->input('diretores', []));
         }
 
         return new TituloResource($titulo->load(['generos', 'diretores']));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Titulo  $titulo
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Titulo $titulo)
     {
-        if (! Gate::allows('manage-titles')) {
-            return response()->json(['message' => 'Não autorizado. Apenas administradores podem deletar títulos.'], 403);
+        if (!Gate::allows('manage-titles')) {
+            return response()->json(['message' => 'Não autorizado.'], 403);
+        }
+
+        // Deletar a imagem associada se existir
+        if ($titulo->capa_url) {
+            Storage::disk('public')->delete($titulo->capa_url);
         }
 
         $titulo->delete();

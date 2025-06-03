@@ -26,8 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // Define um Gate chamado 'manage-titles'
-        // Ele verifica se o usuário logado tem a propriedade is_admin como true
+
         Gate::define('manage-titles', function (User $user) {
             return $user->isAdmin(); 
         });

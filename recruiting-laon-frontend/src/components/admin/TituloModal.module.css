@@ -1,0 +1,88 @@
+.modalOverlay {
+    position: fixed;     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);     display: flex;
+    align-items: center;     justify-content: center;     z-index: 1050;     padding: 20px;   }
+  
+  .modalContent {
+    background: #1F1D2F;     color: #e0e0e0;     padding: 25px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 750px;     max-height: 90vh;     overflow-y: auto;     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    position: relative;     animation: fadeInModal 0.3s ease-out;   }
+  
+  @keyframes fadeInModal {
+    from {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .modalContent h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+    .modalContent select[multiple] {
+    min-height: 100px;   }
+  
+    .imagePreview {
+    max-width: 100px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 5px;
+    border: 1px solid #444;
+  }
+  
+    .closeButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .closeButton:hover {
+    color: #fff;
+  }
+  
+    .modalContent .form-label {
+    color: #bbb;   }
+  
+  .modalContent .form-control,
+  .modalContent .form-select {
+    background-color: #3a3f4a;     color: #e0e0e0;     border: 1px solid #555;
+  }
+  
+  .modalContent .form-control:focus,
+  .modalContent .form-select:focus {
+    background-color: #404552;
+    color: #fff;
+    border-color: #777;
+    box-shadow: none;   }
+  
+  .modalContent .form-control::placeholder {     color: #888;
+  }
+  
+    .imageUploadContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .imageUploadContainer .form-control {
+    flex-grow: 1;
+  }
+  
