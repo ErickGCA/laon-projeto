@@ -1,7 +1,7 @@
-// src/app/layout.tsx
+
 import Providers from "./providers";
 import Header from "@/components/Header"; 
-import Footer from "@/components/Footer"; // <<< IMPORTE SEU FOOTER GLOBAL
+import Footer from "@/components/Footer"; 
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

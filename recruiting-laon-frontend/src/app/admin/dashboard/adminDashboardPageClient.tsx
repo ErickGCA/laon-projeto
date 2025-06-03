@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSession } from "next-auth/react";
 import Image from 'next/image';
-import styles from "./dashboard.module.css"; // Pode usar o mesmo CSS module ou criar um específico
-import TituloModal from '@/components/admin/TituloModal'; // Ajuste o caminho se o modal estiver em outro local
+import styles from "./dashboard.module.css"; 
+import TituloModal from '@/components/admin/TituloModal'; 
 
-// Interfaces (idealmente, defina-as em um arquivo .d.ts compartilhado, ex: src/types/index.d.ts)
+
 interface Genero {
   id: number;
   nome: string;
@@ -15,11 +15,11 @@ interface Diretor {
   id: number;
   nome: string;
 }
-export interface Titulo { // Exportada para que TituloModal possa usá-la também
+export interface Titulo { 
   id: number;
   titulo_pt: string;
   tipo: 'filme' | 'serie';
-  capa_url: string; // Caminho relativo como 'posters/nome.jpg'
+  capa_url: string; 
   ano?: number;
   avaliacao?: number;
   sinopse?: string;
@@ -33,11 +33,11 @@ export interface Titulo { // Exportada para que TituloModal possa usá-la també
   titulo_original?: string;
   generos?: Genero[];
   diretores?: Diretor[];
-  // Adicione quaisquer outros campos que sua API TituloResource retorna
+  
 }
 interface ApiResponseTitulos {
   data: Titulo[];
-  meta?: { // Para paginação do Laravel
+  meta?: { 
     current_page: number;
     last_page: number;
     per_page: number;
@@ -53,7 +53,7 @@ interface ApiResponseTitulos {
   };
 }
 
-// Subcomponente para a linha da tabela de títulos de Admin
+
 function AdminTituloTableRow({ titulo, onEdit, onDelete }: {
   titulo: Titulo;
   onEdit: (titulo: Titulo) => void;
@@ -61,7 +61,7 @@ function AdminTituloTableRow({ titulo, onEdit, onDelete }: {
 }) {
   const imageUrl = titulo.capa_url
     ? `${process.env.NEXT_PUBLIC_LARAVEL_API_URL}/storage/${titulo.capa_url}`
-    : '/placeholder-poster.jpg'; // Certifique-se que este placeholder existe em public/
+    : '/placeholder-poster.jpg'; 
 
   return (
     <tr>
@@ -72,7 +72,7 @@ function AdminTituloTableRow({ titulo, onEdit, onDelete }: {
           width={50}
           height={75}
           style={{ objectFit: 'cover', borderRadius: '4px' }}
-          onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-poster.jpg'; }} // Fallback se a imagem não carregar
+          onError={(e) => { (e.target as HTMLImageElement).src = '/placeholder-poster.jpg'; }} 
         />
       </td>
       <td>{titulo.titulo_pt}</td>
@@ -81,14 +81,14 @@ function AdminTituloTableRow({ titulo, onEdit, onDelete }: {
       <td>
         <button 
           onClick={() => onEdit(titulo)} 
-          className="btn btn-sm btn-outline-warning me-2" // Estilo Bootstrap
+          className="btn btn-sm btn-outline-warning me-2" 
           title="Editar Título"
         >
           Editar
         </button>
         <button 
           onClick={() => onDelete(titulo.id, titulo.titulo_pt)} 
-          className="btn btn-sm btn-outline-danger" // Estilo Bootstrap
+          className="btn btn-sm btn-outline-danger" 
           title="Deletar Título"
         >
           Deletar
@@ -132,7 +132,7 @@ export default function AdminDashboardPageClient() {
         } else {
           setError(errorData.message || `Falha ao buscar títulos: ${res.status}`);
         }
-        setTitulos([]); // Limpa em caso de erro
+        setTitulos([]); 
         return; 
       }
 

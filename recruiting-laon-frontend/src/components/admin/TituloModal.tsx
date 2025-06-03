@@ -263,6 +263,7 @@ export default function TituloModal({ isOpen, onRequestClose, onSave, tituloToEd
           </div>
           <div className="mb-3">
             <label htmlFor="trailer_url" className="form-label text-white">URL do Trailer:</label>
+            <input type="text" name="trailer_url" id="trailer_url" className="form-control text-white" value={formData.trailer_url} onChange={handleChange} />
           </div>
 
 

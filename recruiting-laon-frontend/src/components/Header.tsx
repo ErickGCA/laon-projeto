@@ -39,9 +39,11 @@ export default function Header() {
       </div>
 
       <div className={styles.centerSection}>
-        <Link href="/" className={styles.titleLink}> 
-          <h1 className={styles.title}>Laon Streaming</h1>
-        </Link>
+      <Link href="/" className={styles.logoLink}>
+                
+                <span className={styles.logoText}>LAON</span>
+                <span className={styles.logoTextStreaming}>STREAMING</span>
+            </Link>
       </div>
 
       <div className={styles.rightSection}>

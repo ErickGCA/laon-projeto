@@ -92,7 +92,7 @@ export default function RegisterPage() {
                   placeholder="Nome Completo" 
                   required
                 />
-                <label htmlFor="nome">Nome Completo:</label> 
+                <label htmlFor="nome">Nome Completo</label> 
               </div>
 
               <div className={`${stylesLogin.emailinput} form-floating mb-3`}> 
@@ -106,7 +106,7 @@ export default function RegisterPage() {
                   placeholder="nome@exemplo.com" 
                   required
                 />
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">Email</label>
               </div>
               
               <div className= {`${stylesLogin.senhainput} form-floating mb-3`}>
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                   placeholder="Senha" 
                   required
                 />
-                <label htmlFor="password">Senha:</label> 
+                <label htmlFor="password">Senha</label> 
               </div>
               <div className= {`${stylesLogin.senhainput} form-floating mb-3`}> 
                 <input
@@ -133,7 +133,7 @@ export default function RegisterPage() {
                   placeholder="Confirme sua senha"
                   required
                 />
-                <label htmlFor="passwordConfirmation">Confirme sua senha:</label> 
+                <label htmlFor="passwordConfirmation">Confirme sua senha</label> 
               </div>
               {success && (
                 <div className={`alert alert-success ${styles.successMessage}`} role="alert"> 

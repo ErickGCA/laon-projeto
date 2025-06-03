@@ -69,7 +69,7 @@ export default async function DashboardPage() {
 
   return (
     <div className={styles.dashboardPage}>
-      <main className="container-fluid py-2"> {/* Ajustado padding */}
+      <main className="container-fluid py-2"> 
         {(!titulosResponse && session.accessToken) &&
             <div className="alert alert-warning" role="alert">
              Falha ao carregar os títulos do catálogo. Tente novamente mais tarde.
@@ -81,7 +81,7 @@ export default async function DashboardPage() {
             </div>
         }
         
-        {/* Renderiza a seção "Populares" apenas se houver filmes ou séries */}
+        
         {(filmes.length > 0 || series.length > 0) &&
             <h2 className={styles.sectionPopular}>Populares</h2>
         }
