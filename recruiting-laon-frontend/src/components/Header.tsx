@@ -1,32 +1,77 @@
-"use client";
 
-import styles from "./header.module.css";
-import { useRouter, usePathname } from "next/navigation"; 
+"use client"; 
+
+import { useSession, signOut } from "next-auth/react"; 
+import { useRouter, usePathname } from "next/navigation";
+import Link from 'next/link'; 
+import styles from "./header.module.css"; 
+
+
+
+
+
+
 
 export default function Header() {
   const router = useRouter();
-  const pathname = usePathname(); 
+  const pathname = usePathname();
+  const { data: session, status } = useSession(); 
 
-
-  const loginPath = '/login';
-  const registerPath = '/register';
+  const isLoginPage = pathname === '/login';
+  const isRegisterPage = pathname === '/register';
+  const shouldShowBackButton = !isLoginPage && !isRegisterPage;
+  const isLoadingSession = status === "loading";
 
   return (
-<header className={styles.header}>
-    {pathname !== loginPath && pathname !== registerPath ? (
-      <button 
-  onClick={() => router.back()} 
-  style={{ backgroundColor: '#1F1D2F', color: '#fff', border: '1px solid #000', padding: '0.5rem 1rem', borderRadius: '4px' }}
->
-  Voltar
-</button>
-    ) : (
-        <div style={{ width: '100px', padding: '10px 15px' }}></div> 
-    )}
+    <header className={styles.header}>
+      <div className={styles.leftSection}>
+        {shouldShowBackButton ? (
+          <button
+            onClick={() => router.back()}
+            className={`btn btn-outline-light btn-sm ${styles.backButton}`} 
+          >
+            &larr; Voltar
+          </button>
+        ) : (
+          
+          <div style={{ minWidth: '80px' }}></div> 
+        )}
+      </div>
 
-    <h1 className={styles.title}>Laon Streaming</h1>
+      <div className={styles.centerSection}>
+        <Link href="/" className={styles.titleLink}> 
+          <h1 className={styles.title}>Laon Streaming</h1>
+        </Link>
+      </div>
 
-    <div style={{ flex: 1 }}></div>
-</header>
+      <div className={styles.rightSection}>
+        {isLoadingSession ? (
+          <div className="spinner-border spinner-border-sm text-light" role="status">
+            <span className="visually-hidden">Carregando...</span>
+          </div>
+        ) : session?.user ? (
+          <div className="d-flex align-items-center">
+            <span className={`me-3 ${styles.welcomeMessage}`}> 
+              Olá, {session.user.name || session.user.email}!
+            </span>
+            
+            
+            
+            <button onClick={() => signOut({ callbackUrl: '/login' })} className="btn btn-sm btn-outline-light">Sair</button>
+          </div>
+        ) : (
+          
+          !isLoginPage && !isRegisterPage && (
+            <div className="d-flex align-items-center">
+              <Link href="/login" className={`btn btn-sm btn-light me-2 ${styles.authButton}`}>Entrar</Link>
+              <Link href="/register" className={`btn btn-sm btn-primary ${styles.authButton}`}>Cadastrar</Link>
+            </div>
+          )
+        )}
+        {(!isLoadingSession && !session?.user && (isLoginPage || isRegisterPage)) && (
+            <div style={{ minWidth: '180px' }}></div> 
+        )}
+      </div>
+    </header>
   );
 }

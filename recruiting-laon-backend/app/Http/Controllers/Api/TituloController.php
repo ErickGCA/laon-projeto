@@ -9,13 +9,13 @@ use App\Http\Resources\TituloResource;
 use App\Http\Resources\TituloCollection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Storage; // Para lidar com arquivos
+use Illuminate\Support\Facades\Storage; 
 
 class TituloController extends Controller
 {
     public function index()
     {
-        return new TituloCollection(Titulo::with(['generos', 'diretores'])->paginate(10));
+        return new TituloCollection(Titulo::with(['generos', 'diretores'])->get());
     }
 
     public function store(Request $request)
@@ -41,8 +41,8 @@ class TituloController extends Controller
             'generos.*' => 'integer|exists:generos,id',
             'diretores' => 'nullable|array',
             'diretores.*' => 'integer|exists:diretores,id',
-            // Validação para o upload da imagem da capa
-            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // 'capa_imagem' é o nome do campo do arquivo
+            
+            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
         ]);
 
         if ($validator->fails()) {
@@ -52,9 +52,9 @@ class TituloController extends Controller
         $data = $request->except(['capa_imagem', 'generos', 'diretores']);
 
         if ($request->hasFile('capa_imagem')) {
-            // Salva a imagem em storage/app/public/posters e obtém o caminho
+            
             $path = $request->file('capa_imagem')->store('posters', 'public');
-            $data['capa_url'] = $path; // Salva o caminho relativo (ex: posters/arquivo.jpg)
+            $data['capa_url'] = $path; 
         }
 
         $titulo = Titulo::create($data);
@@ -80,16 +80,16 @@ class TituloController extends Controller
             return response()->json(['message' => 'Não autorizado.'], 403);
         }
 
-        // Nota: O Laravel não lida bem com arquivos (PUT/PATCH) via x-www-form-urlencoded por padrão.
-        // Para uploads em updates, o frontend geralmente envia um POST com um campo _method='PUT'.
-        // Ou você pode criar um endpoint dedicado como /api/titulos/{id}/update-com-capa
-        // Para simplificar aqui, vamos assumir que a capa_url pode ser uma string (caminho existente)
-        // ou um novo upload (capa_imagem).
+        
+        
+        
+        
+        
 
         $validator = Validator::make($request->all(), [
             'titulo_pt' => 'sometimes|required|string|max:255',
             'tipo' => 'sometimes|required|in:filme,serie',
-            // ... outras validações como no store ...
+            
             'ano' => 'nullable|integer|digits:4',
             'sinopse' => 'nullable|string',
             'elenco' => 'nullable|string',
@@ -104,32 +104,32 @@ class TituloController extends Controller
             'generos.*' => 'integer|exists:generos,id',
             'diretores' => 'nullable|array',
             'diretores.*' => 'integer|exists:diretores,id',
-            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Para nova imagem
-            'capa_url' => 'nullable|string|max:255', // Para manter/definir caminho existente
+            'capa_imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', 
+            'capa_url' => 'nullable|string|max:255', 
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
-        $data = $request->except(['capa_imagem', '_method', 'generos', 'diretores']); // _method se estiver usando POST para simular PUT
+        $data = $request->except(['capa_imagem', '_method', 'generos', 'diretores']); 
 
         if ($request->hasFile('capa_imagem')) {
-            // Deletar a imagem antiga se existir e uma nova for enviada
+            
             if ($titulo->capa_url) {
                 Storage::disk('public')->delete($titulo->capa_url);
             }
             $path = $request->file('capa_imagem')->store('posters', 'public');
             $data['capa_url'] = $path;
         } elseif ($request->filled('capa_url')) {
-            // Se capa_imagem não foi enviada, mas capa_url sim (para manter ou mudar para um path existente)
+            
             $data['capa_url'] = $request->input('capa_url');
         }
-        // Se nem capa_imagem nem capa_url forem enviados, capa_url existente no $titulo é mantido.
+        
 
         $titulo->update($data);
 
-        if ($request->has('generos')) { // Usar has() para permitir array vazio para desvincular
+        if ($request->has('generos')) { 
             $titulo->generos()->sync($request->input('generos', []));
         }
         if ($request->has('diretores')) {
@@ -145,7 +145,7 @@ class TituloController extends Controller
             return response()->json(['message' => 'Não autorizado.'], 403);
         }
 
-        // Deletar a imagem associada se existir
+        
         if ($titulo->capa_url) {
             Storage::disk('public')->delete($titulo->capa_url);
         }

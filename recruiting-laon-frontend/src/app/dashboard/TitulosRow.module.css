@@ -1,0 +1,122 @@
+
+.titulosRowSection {
+    position: relative;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .carouselNavButtons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .navButton {
+    background-color: rgba(20, 20, 20, 0.5);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .navButton:hover {
+    background-color: rgba(40, 40, 40, 0.7);
+    color: #fff;
+  }
+  
+  .carouselWrapper {
+    position: relative;
+  }
+  
+  .carouselRow {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+    gap: 15px;
+  }
+  
+  .carouselRow::-webkit-scrollbar {
+    height: 8px;
+  }
+  .carouselRow::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+  }
+  .carouselRow::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+  }
+  .carouselRow::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+  }
+ 
+  .carouselRow {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) rgba(255,255,255,0.05);
+  }
+  
+  
+  .cardContainer {
+    position: relative;
+    flex: 0 0 auto;
+    width: 180px;
+    height: 270px;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+    z-index: 1;
+  }
+  
+  .cardContainer:hover .cardImage {
+    transform: scale(1.05);
+   
+   
+  }
+  
+  .infoOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, transparent 90%);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    padding: 20px 10px 10px 10px;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .cardContainer:hover .infoOverlay {
+    opacity: 1;
+  }
+  
+  .infoOverlay h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  

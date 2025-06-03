@@ -6,23 +6,17 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TituloCollection extends ResourceCollection
 {
+    /**
+     * Transform the resource collection into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
     public function toArray($request)
     {
         return [
             'data' => TituloResource::collection($this->collection),
-            'links' => [
-                'self' => url()->current(),
-            ],
-             
-            'meta' => $this->when($this->resource instanceof \Illuminate\Pagination\AbstractPaginator, [
-                'current_page' => $this->resource->currentPage(),
-                'from' => $this->resource->firstItem(),
-                'last_page' => $this->resource->lastPage(),
-                'path' => $this->resource->path(),
-                'per_page' => $this->resource->perPage(),
-                'to' => $this->resource->lastItem(),
-                'total' => $this->resource->total(),
-            ]),
+
         ];
     }
 }

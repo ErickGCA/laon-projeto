@@ -1,0 +1,26 @@
+[33m9552f5a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fix: paginação em dashboards
+[33m05ccd1e[m fix: finalizado integração entre frontend e backend
+[33ma77b5ad[m fix: problema de looping na aba admin/dashboard, design corrigido
+[33m64eda5f[m fix: usuario padrão não consegue mais acessar a rota admin
+[33mcb57b23[m fix: consertado problemas de acesso a rotas restritas
+[33m3ff1211[m update: criação de role admin para utilização do CRUD titulos
+[33m68f79db[m feat: tela de detalhes sobre filmes/series criada e design encaminhado
+[33m6a89f75[m feat: cards de filmes e series funcionais e estilizados, design condizente com as demais telas
+[33mda989e4[m layout: layout e design da pagina catalogo iniciados
+[33m00f99de[m design: login e registro terminado, header criador
+[33mbacd5b4[m style: adicionado estilos globais de footer
+[33m5606810[m feat(UI): finalize design da tela login
+[33m974ff22[m fix: integração entre front e back, login, registro e dashboard, designs inicias
+[33mda8f4c7[m fix: registrar e logar funcionais
+[33m4d4403c[m chore: backend finalizado, iniciando integração de autenticação no frontend
+[33mdca6330[m docs: foto do diagrama atualizada
+[33m4e4d506[m docs: readme atualizado
+[33mec85c2e[m fix: seeder diretor, protected $table = 'diretores'; <- models -> diretor.php
+[33m44745a8[m fix: registro e login funcionando, seeders adicionados
+[33m26f1d34[m docs: atualizado README e finalizado fluxo de registro/login
+[33m9d8ab69[m feat(models/migrations): adiciona models e migrations para Titulos, Generos, Diretores e tabelas pivot com relações muitos-para-muitos
+[33m7937e10[m feat(auth): implementa endpoints de autenticação (register, login, logout, user) usando Sanctum
+[33m0d20c01[m feat(migration): cria tabela users com campos nome, email, senha e verificação de email
+[33me55a0cc[m feat(model): model User com sanctum
+[33md8ffd42[m feat: modelagem de banco e DER gerado
+[33m9f3a1d3[m laon project

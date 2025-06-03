@@ -1,32 +1,54 @@
 
 .header {
-  display: flex; 
-  align-items: center; 
-  padding: 0 50px;
-  height: 100px;
-  position: relative; 
-  background-color: #1c1b2b; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #1F1D2F;
+  color: #fff;
+  border-bottom: 1px solid #2a2a38;
+}
+
+.leftSection, .rightSection {
+  flex: 1;
+  display: flex;
+}
+
+.leftSection {
+  justify-content: flex-start;
+}
+
+.rightSection {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.centerSection {
+  flex: 2;
+  text-align: center;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .title {
-  flex: 10; 
-
-  text-align: center;
-  font-size: 2rem; 
-  color: #fff;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-
 .backButton {
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100px; 
-  padding: 10px 15px;
-  background-color: #007bff; 
-  color: white;
-  border: none;
+ 
+ 
+}
 
+.welcomeMessage {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+.authButton {
+   
 }

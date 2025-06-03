@@ -1,10 +1,10 @@
 
 import Providers from "./providers";
-import "./globals.css"; 
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import Header from "@/components/Header";
+import Header from "@/components/Header"; 
+import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export const metadata = { 
+export const metadata = {
   title: 'Laon Recruiting App',
   description: 'Desafio de recrutamento Laon Labs',
 };
@@ -17,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Header />
-        
-        <Providers>{children}</Providers>
+        <Providers> 
+          <Header /> 
+          <main>{children}</main> 
+          
+        </Providers>
       </body>
     </html>
   );

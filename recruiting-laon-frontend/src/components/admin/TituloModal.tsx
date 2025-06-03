@@ -81,7 +81,7 @@ export default function TituloModal({ isOpen, onRequestClose, onSave, tituloToEd
         const generosData = await generosRes.json();
         const diretoresData = await diretoresRes.json();
         
-        setAllGeneros(generosData.data || []); // Assumindo que sua API retorna { data: [...] }
+        setAllGeneros(generosData.data || []); 
         setAllDiretores(diretoresData.data || []);
       } catch (err: any) {
         setError(`Erro ao carregar dados do formulário: ${err.message}`);
@@ -283,7 +283,7 @@ export default function TituloModal({ isOpen, onRequestClose, onSave, tituloToEd
           
 
           <div className="d-flex justify-content-end">
-            <button type="button" onClick={onRequestClose} className="btn btn-secondary me-2 text-black" disabled={isSubmitting}>Cancelar</button>
+            <button type="button" onClick={onRequestClose} className="btn btn-secondary me-2" disabled={isSubmitting}>Cancelar</button>
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
               {isSubmitting ? 'Salvando...' : (tituloToEdit ? 'Atualizar Título' : 'Adicionar Título')}
             </button>
