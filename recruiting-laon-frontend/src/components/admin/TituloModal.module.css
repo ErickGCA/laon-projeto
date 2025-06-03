@@ -85,4 +85,8 @@
   .imageUploadContainer .form-control {
     flex-grow: 1;
   }
-  
+  .modalTitle {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+  }

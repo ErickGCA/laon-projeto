@@ -14,9 +14,12 @@ export default function Header() {
   return (
 <header className={styles.header}>
     {pathname !== loginPath && pathname !== registerPath ? (
-        <button onClick={() => router.back()} className={styles.backButton}>
-        Voltar
-        </button>
+      <button 
+  onClick={() => router.back()} 
+  style={{ backgroundColor: '#1F1D2F', color: '#fff', border: '1px solid #000', padding: '0.5rem 1rem', borderRadius: '4px' }}
+>
+  Voltar
+</button>
     ) : (
         <div style={{ width: '100px', padding: '10px 15px' }}></div> 
     )}

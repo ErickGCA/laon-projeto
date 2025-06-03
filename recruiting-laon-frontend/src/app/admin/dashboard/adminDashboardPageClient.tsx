@@ -230,7 +230,8 @@ return (
             style={{ backgroundColor: '#1F1D2F' }}
             >
             <h1 className="h3 mb-0">Gerenciamento de Catálogo</h1>
-            <button onClick={handleOpenModalForNew} className="btn btn-lg btn-success">
+            <button onClick={handleOpenModalForNew} className="btn btn-lg" style={{ backgroundColor: '#1F1D2F', color: '#fff', border: '1px solid #000', borderRadius: '10px' }}>
+
                 <i className="fas fa-plus me-2"></i>Adicionar Novo Título
             </button>
         </header>

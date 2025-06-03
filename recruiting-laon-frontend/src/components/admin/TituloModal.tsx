@@ -283,7 +283,7 @@ export default function TituloModal({ isOpen, onRequestClose, onSave, tituloToEd
           
 
           <div className="d-flex justify-content-end">
-            <button type="button" onClick={onRequestClose} className="btn btn-secondary me-2" disabled={isSubmitting}>Cancelar</button>
+            <button type="button" onClick={onRequestClose} className="btn btn-secondary me-2 text-black" disabled={isSubmitting}>Cancelar</button>
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
               {isSubmitting ? 'Salvando...' : (tituloToEdit ? 'Atualizar Título' : 'Adicionar Título')}
             </button>
