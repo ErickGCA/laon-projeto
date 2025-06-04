@@ -100,8 +100,7 @@ O repositório está organizado da seguinte forma para clareza e separação de 
 
 recruiting-laon/
 ├── 📁 recruiting-laon-backend/    # API RESTful desenvolvida com Laravel
-├── 📁 recruiting-laon-frontend/   # Aplicação Web desenvolvida com Next.js e React (App Router)
-└── 📁 recruiting-laon-app/        # Não Desenvolvido
+├── 📁 recruiting-laon-frontend/   # Aplicação Web desenvolvida com 
 
 
 ---
@@ -271,8 +270,7 @@ A interface do usuário foi desenvolvida com Next.js (utilizando o App Router) e
 - [x] 📄 **Paginação de Dados** (No painel de admin e potencialmente no catálogo)
 - [x] 🎨 **Interface Responsiva** (Utilizando Bootstrap e CSS customizado)
 - [x] ⚙️ **API RESTful Robusta** com Laravel
-- [ ] 🔍 **Sistema de Busca Avançada** no catálogo
-- [ ] ⭐ **Sistema de Avaliações** pelos usuários
+- [x] 🔍 **Sistema de Busca Avançada** no catálogo
 - [ ] 📱 **Desenvolvimento do App Mobile** 
 
 ---
