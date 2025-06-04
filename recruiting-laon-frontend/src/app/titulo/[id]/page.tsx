@@ -109,8 +109,6 @@ export default async function TituloDetalhesPage({ params }: { params: { id: str
               </>
             )}
           </p>
-
-          
           {titulo.generos && titulo.generos.length > 0 && (
             <div className={styles.tagsContainer}>
               {titulo.generos.map(genero => (

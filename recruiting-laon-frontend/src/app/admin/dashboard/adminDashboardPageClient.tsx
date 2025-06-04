@@ -242,7 +242,7 @@ return (
             
             {!loading && !error && titulos.length > 0 && (
             <>
-                <p className="text-white">Mostrando {itemsFrom}-{itemsTo} de {totalItems} títulos.</p>
+
                 <div className="table-responsive">
                 <table className={`table table-striped table-hover table-dark ${styles.adminTable}`}>
                     <thead>

@@ -1,4 +1,3 @@
-
 import Providers from "./providers";
 import Header from "@/components/Header"; 
 import Footer from "@/components/Footer"; 
@@ -8,6 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const metadata = {
   title: 'Laon Recruiting App',
   description: 'Desafio de recrutamento Laon Labs',
+  icons: {
+    icon: '/images.ico',
+    type: 'image/ico',
+    sizes: 'any',
+  },
 };
 
 export default function RootLayout({

@@ -105,7 +105,6 @@ export default function LoginPage() {
           )}
         </button>
                   </div>
-              
               <button className={`w-100 btn btn-lg btn-primary ${styles.customButton}`} type="submit"> 
                 Entrar
               </button>

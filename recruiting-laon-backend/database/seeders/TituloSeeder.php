@@ -117,7 +117,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'John Travolta, Uma Thurman, Samuel L. Jackson',
                 'avaliacao' => 8.9,
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/pulp_fiction.jpg',
             ]
         );
         if ($titulo4 && $drama) $titulo4->generos()->syncWithoutDetaching([$drama->id]); 
@@ -135,7 +135,7 @@ class TituloSeeder extends Seeder
                 'estado_serie' => 'em andamento', 
                 'numero_temporadas' => 4, 
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/stranger.jpeg',
             ]
         );
         if ($serie2 && $drama) $serie2->generos()->syncWithoutDetaching([$drama->id]);
@@ -154,7 +154,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Marlon Brando, Al Pacino, James Caan',
                 'avaliacao' => 9.2,
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/chefe.jpg',
             ]
         );
         if ($titulo5 && $drama) $titulo5->generos()->syncWithoutDetaching([$drama->id]);
@@ -170,7 +170,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Timothée Chalamet, Rebecca Ferguson, Oscar Isaac',
                 'avaliacao' => 8.0,
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/Dune_2021.jpeg',
             ]
         );
         if ($titulo6 && $fc) $titulo6->generos()->syncWithoutDetaching([$fc->id]);
@@ -191,7 +191,7 @@ class TituloSeeder extends Seeder
                 'estado_serie' => 'finalizada',
                 'numero_temporadas' => 5,
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/big-poster-serie-breaking-bad-lo02-tamanho-90x60-cm-poster.jpg',
             ]
         );
         if ($serie3 && $drama) $serie3->generos()->syncWithoutDetaching([$drama->id]);
@@ -208,7 +208,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Liam Neeson, Ralph Fiennes, Ben Kingsley',
                 'avaliacao' => 9.0,
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/SchindlerPoster.jpg',
             ]
         );
         if ($titulo7 && $drama) $titulo7->generos()->syncWithoutDetaching([$drama->id]);
@@ -225,7 +225,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong',
                 'avaliacao' => 8.5,
                 'idioma' => 'Coreano',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/parasita.jpg',
             ]
         );
         if ($titulo8 && $drama) $titulo8->generos()->syncWithoutDetaching([$drama->id]);
@@ -242,7 +242,7 @@ class TituloSeeder extends Seeder
                 'estado_serie' => 'em andamento',
                 'numero_temporadas' => 3, 
                 'idioma' => 'Inglês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/mandarol.jpg',
             ]
         );
         if ($serie4 && $acao) $serie4->generos()->syncWithoutDetaching([$acao->id]);
@@ -260,7 +260,7 @@ class TituloSeeder extends Seeder
                 'elenco' => 'Rumi Hiiragi, Miyu Irino, Mari Natsuki (vozes originais)',
                 'avaliacao' => 8.6,
                 'idioma' => 'Japonês',
-                'capa_url' => 'posters/placeholder_poster.jpg',
+                'capa_url' => 'posters/250px-A_Viagem_de_Chihiro.jpeg',
             ]
         );
         //if ($titulo9 && $animacao) $titulo9->generos()->syncWithoutDetaching([$animacao->id]);
