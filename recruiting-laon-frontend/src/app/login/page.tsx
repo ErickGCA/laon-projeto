@@ -13,6 +13,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -73,18 +74,37 @@ export default function LoginPage() {
               </div>
               
               <div className={`${styles.senhainput} form-floating mb-3`}> 
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  className="form-control" 
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Senha" 
-                  required
-                />
-                <label htmlFor="password">Senha</label> 
-              </div>
+            <input
+              id="password"
+              name="password"
+              type={showPassword ? "text" : "password"}
+              className="form-control"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Senha"
+              required
+            />
+            <label htmlFor="password">Senha</label>
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", background: "none", border: "none", cursor: "pointer" }}
+              aria-label="Toggle password visibility"
+            >
+          {showPassword ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-5 0-9-3-11-7 1.09-2.02 2.87-3.73 5.17-4.7"/>
+              <path d="M1 1l22 22"/>
+              <path d="M9.88 9.88a3 3 0 0 0 4.24 4.24"/>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/>
+            </svg>
+          )}
+        </button>
+                  </div>
               
               <button className={`w-100 btn btn-lg btn-primary ${styles.customButton}`} type="submit"> 
                 Entrar
