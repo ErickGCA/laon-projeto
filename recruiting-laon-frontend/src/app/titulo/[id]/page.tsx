@@ -96,12 +96,20 @@ export default async function TituloDetalhesPage({ params }: { params: { id: str
         <div className={styles.infoArea}>
           <h1>{titulo.titulo_pt}</h1>
           {titulo.titulo_original && titulo.titulo_original !== titulo.titulo_pt && (
-            <p className={styles.subInfo}>Título original: {titulo.titulo_original}</p>
+            <p className={styles.subInfo}>Título Original: {titulo.titulo_original}</p>
           )}
           <p className={styles.subInfo}>
-            {titulo.ano && <span>{titulo.ano}</span>}
-            {titulo.duracao && <span> &bull; {titulo.duracao}</span>}
+            {titulo.ano && <span>Ano: {titulo.ano}</span>}
+            {titulo.duracao != null && (
+              <>
+                <br />
+                <span>
+                  Duração: {Math.floor(Number(titulo.duracao) / 60)}h {Number(titulo.duracao) % 60}m
+                </span>
+              </>
+            )}
           </p>
+
           
           {titulo.generos && titulo.generos.length > 0 && (
             <div className={styles.tagsContainer}>
