@@ -1,0 +1,76 @@
+
+services:
+
+  backend:
+    build:
+      context: ./recruiting-laon-backend
+      dockerfile: Dockerfile
+    container_name: laon-backend
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./recruiting-laon-backend:/var/www
+    networks:
+      - laon-network
+    depends_on:
+      - db
+
+  # Frontend Next.js
+  frontend:
+    build:
+      context: ./recruiting-laon-frontend
+      dockerfile: Dockerfile
+    container_name: laon-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./recruiting-laon-frontend:/app
+      - /app/node_modules
+    networks:
+      - laon-network
+    depends_on:
+      - backend
+
+
+  db:
+    image: mysql:8.0
+    container_name: laon-db
+    restart: unless-stopped
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}   
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - laon-network
+
+
+  nginx:
+    image: nginx:alpine
+    container_name: laon-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./recruiting-laon-backend:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - laon-network
+    depends_on:
+      - backend
+
+networks:
+  laon-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local 
