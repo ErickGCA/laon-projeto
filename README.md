@@ -1,32 +1,38 @@
 # 🎬 Recruiting Laon - Catálogo de Filmes e Séries
 
 <div align="center">
-  
-![GitHub repo size](https://img.shields.io/github/repo-size/ErickGCA/laon-projeto?color=00d4ff&style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/ErickGCA/laon-projeto?color=ff6b6b&style=for-the-badge)
-![GitHub top language](https://img.shields.io/github/languages/top/ErickGCA/laon-projeto?color=4ecdc4&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/ErickGCA/laon-projeto?color=ffd93d&style=for-the-badge)
-
-
+  <a href="https://github.com/ErickGCA/laon-projeto">
+    <img src="https://img.shields.io/github/repo-size/ErickGCA/laon-projeto?color=00d4ff&style=for-the-badge" alt="Tamanho do Repositório GitHub"/>
+  </a>
+  <a href="https://github.com/ErickGCA/laon-projeto">
+    <img src="https://img.shields.io/github/languages/count/ErickGCA/laon-projeto?color=ff6b6b&style=for-the-badge" alt="Contagem de Linguagens GitHub"/>
+  </a>
+  <a href="https://github.com/ErickGCA/laon-projeto">
+    <img src="https://img.shields.io/github/languages/top/ErickGCA/laon-projeto?color=4ecdc4&style=for-the-badge" alt="Linguagem Principal GitHub"/>
+  </a>
+  <a href="https://github.com/ErickGCA/laon-projeto/commits/main">
+    <img src="https://img.shields.io/github/last-commit/ErickGCA/laon-projeto?color=ffd93d&style=for-the-badge" alt="Último Commit GitHub"/>
+  </a>
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D4FF&background=0F0F2300&center=true&vCenter=true&width=600&lines=Plataforma+de+Cat%C3%A1logo+de+Filmes;Desenvolvido+para+Laon+Labs;Laravel+%2B+React+%2B+MySQL" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D4FF&background=0F0F2300&center=true&vCenter=true&width=600&lines=Plataforma+de+Cat%C3%A1logo+de+Filmes+e+S%C3%A9ries;Desenvolvido+para+Laon+Labs;Laravel+%2B+Next.js+%2B+MySQL" alt="Typing SVG" />
 </div>
 
 ---
 
 ## ✨ Visão Geral do Projeto
 
-> **Uma plataforma completa de catálogo de filmes e séries desenvolvida como teste de recrutamento para [Laon Labs](https://laonlabs.com)**
+> **Uma plataforma completa de catálogo de filmes e séries desenvolvida como teste de recrutamento para [Laon Labs](https://laonlabs.com).**
 
 A aplicação permite que usuários:
-- 🔐 **Criem conta e façam login** com autenticação segura
-- 🎥 **Naveguem pelo catálogo** de filmes e séries  
-- 📝 **Visualizem detalhes completos** como sinopse, elenco e avaliações
-- 👨‍💼 **Gerenciem conteúdo** (para administradores)
+- 🔐 **Criem conta e façam login** com autenticação segura via Laravel Sanctum e NextAuth.js.
+- 🎥 **Naveguem pelo catálogo** de filmes e séries com uma interface moderna e responsiva.
+- 📝 **Visualizem detalhes completos** dos títulos, incluindo sinopse, elenco, avaliações, gêneros e diretores.
+- 👨‍💼 **Gerenciem o conteúdo do catálogo** (para administradores), incluindo adicionar, editar e deletar filmes e séries.
 
-🔗 **[Figma Design Reference](https://www.figma.com/design/UNbd6QwutVcqiWoVEtBlCi/Recrutamento?node-id=2-9)** | 📋 **[Postman Collection](https://drive.google.com/file/d/1VzOATnBPGUXW26RavbBMc5rbIl5wsywL/view?usp=drive_link)**
+🔗 **Referência de Design (Figma):** [Clique aqui para acessar](https://www.figma.com/design/UNbd6QwutVcqiWoVEtBlCi/Recrutamento?node-id=2-9)
+📋 **Coleção Postman (API):** [Clique aqui para acessar](https://drive.google.com/file/d/1VzOATnBPGUXW26RavbBMc5rbIl5wsywL/view?usp=drive_link) <!-- Substitua pelo seu link final, se diferente -->
 
 ---
 
@@ -37,11 +43,14 @@ A aplicação permite que usuários:
 ### Backend
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white) <!-- Cor ajustada para melhor contraste -->
 
 ### Frontend
+
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white) <!-- Cor ajustada -->
 
 ### Mobile (Opcional)
 ![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -50,31 +59,35 @@ A aplicação permite que usuários:
 </div>
 
 <details>
-<summary>📦 <strong>Lista Completa de Tecnologias</strong></summary>
+<summary>📦 <strong>Lista Completa de Tecnologias e Ferramentas</strong></summary>
 
 **Backend:**
-- PHP 8+
-- Laravel 8+ 
+- PHP 
+- Laravel 
 - MySQL 8
-- Laravel Sanctum (autenticação API)
+- Laravel Sanctum (para autenticação de API)
 
 **Frontend:**
-- Node.js
-- Next.js / Create React App
+- Node.js 
+- Next.js (App Router)
 - React
-- Bootstrap 5  
-- Font Awesome
+- TypeScript
+- NextAuth.js (para autenticação no frontend)
+- Bootstrap 5 (para sistema de grid e componentes base)
+- CSS Modules (para estilização customizada)
 
-**Mobile App (Opcional):**
+
+**Mobile App (Não realizado):**
 - React Native
 - Expo
 
-**Ferramentas:**
+**Ferramentas de Desenvolvimento:**
 - Git & GitHub
-- Composer
-- NPM / Yarn
-- Postman
-- MySQL Workbench
+- Composer (gerenciador de dependências PHP)
+- NPM / Yarn (gerenciador de dependências Node.js)
+- Postman (para testes de API)
+- MySQL Workbench 
+- VS Code (ou sua IDE de preferência)
 
 </details>
 
@@ -82,115 +95,140 @@ A aplicação permite que usuários:
 
 ## 🚀 Estrutura do Projeto
 
-```
+O repositório está organizado da seguinte forma para clareza e separação de responsabilidades:
+
+
 recruiting-laon/
-├── 📁 recruiting-laon-backend/    # API RESTful (Laravel)
-├── 📁 recruiting-laon-frontend/   # Interface Web (Next.js/React)  
-└── 📁 recruiting-laon-app/        # App Mobile (React Native)
-```
+├── 📁 recruiting-laon-backend/    # API RESTful desenvolvida com Laravel
+├── 📁 recruiting-laon-frontend/   # Aplicação Web desenvolvida com Next.js e React (App Router)
+└── 📁 recruiting-laon-app/        # Não Desenvolvido
+
 
 ---
 
 ## 💾 Modelagem do Banco de Dados
 
+A modelagem do banco de dados foi um passo fundamental, projetada para suportar as funcionalidades da plataforma, com foco nas entidades principais como Usuários, Títulos (Filmes/Séries), Gêneros e Diretores, e seus relacionamentos.
+
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ErickGCA/laon-projeto/main/DER.png" alt="Modelo Entidade-Relacionamento" width="700"/>
-  <p><em>Diagrama ER com foco em Usuários, Títulos, Gêneros e Diretores</em></p>
+  <img src="images/DER.png" alt="Modelo Entidade-Relacionamento" width="750"/>
+  <p><em>Diagrama Entidade-Relacionamento do banco de dados da aplicação.</em></p>
 </div>
 
 ---
 
-## ⚙️ Configuração do Backend
+## ⚙️ Backend (`recruiting-laon-backend`)
+
+A API RESTful foi construída com Laravel, utilizando Laravel Sanctum para autenticação baseada em token, e segue as melhores práticas para desenvolvimento de APIs.
 
 <details>
-<summary>🔧 <strong>Pré-requisitos</strong></summary>
+<summary>🔧 <strong>Pré-requisitos para o Backend</strong></summary>
 
-- PHP >= 8.0
+- PHP >= 8.1 
 - Composer
 - MySQL 8
-- Servidor Web (Apache/Nginx) ou `php artisan serve`
+- Servidor Web (Apache/Nginx) ou o servidor embutido do Laravel (`php artisan serve`)
 
 </details>
 
-### 🚀 Instalação Rápida
+### 🚀 Instalação e Configuração (Backend)
 
-```bash
-# Clone o repositório
-git clone https://github.com/ErickGCA/laon-projeto.git
-cd laon-projeto/recruiting-laon-backend
-
-# Instale dependências
-composer install
-
-# Configure ambiente
-cp .env.example .env
-# ⚠️ Configure as variáveis do banco no .env
-
-# Gere chave e execute migrations
-php artisan key:generate
-php artisan migrate --seed
-
-# Inicie o servidor
-php artisan serve
-```
-
-> 🌐 **API disponível em:** `http://127.0.0.1:8000/api/`
+1.  **Navegue até a pasta do backend:**
+    ```bash
+    cd recruiting-laon-backend
+    ```
+2.  **Instale as dependências do Composer:**
+    ```bash
+    composer install
+    ```
+3.  **Configure o arquivo de ambiente:**
+    * Copie o arquivo de exemplo: `cp .env.example .env`
+    * Abra o arquivo `.env` e configure as variáveis de ambiente, especialmente as de conexão com o banco de dados (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, etc.).
+4.  **Gere a chave da aplicação Laravel:**
+    ```bash
+    php artisan key:generate
+    ```
+5.  **Execute as migrations para criar as tabelas e os seeders para popular o banco com dados iniciais:**
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+6.  **Crie o link simbólico para o storage (para acesso público a imagens):**
+    ```bash
+    php artisan storage:link
+    ```
+7.  **Inicie o servidor de desenvolvimento do Laravel:**
+    ```bash
+    php artisan serve
+    ```
+> 🌐 A API estará disponível em: `http://127.0.0.1:8000/api/` (ou a porta que você configurar).
 
 ---
 
-## 🌐 Endpoints da API
+## 🌐 Endpoints da API (Backend)
+
+A API fornece os seguintes endpoints principais:
 
 <div align="center">
 
-| Método | Endpoint | Descrição | Auth |
-|--------|----------|-----------|------|
-| `POST` | `/api/register` | Registro de usuário | ❌ |
-| `POST` | `/api/login` | Login de usuário | ❌ |
-| `GET` | `/api/user` | Dados do usuário logado | ✅ |
-| `POST` | `/api/logout` | Logout do usuário | ✅ |
-| `GET` | `/api/titulos` | Listar todos os títulos | ✅ |
-| `GET` | `/api/titulos/{id}` | Detalhes de um título | ✅ |
-| `POST` | `/api/titulos` | Criar novo título | 👑 Admin |
-| `PUT` | `/api/titulos/{id}` | Atualizar título | 👑 Admin |
-| `DELETE` | `/api/titulos/{id}` | Remover título | 👑 Admin |
+| Método | Endpoint           | Descrição                                  | Autenticação Requerida | Permissão de Admin |
+|--------|--------------------|--------------------------------------------|------------------------|--------------------|
+| `POST` | `/api/register`    | Registrar um novo usuário                  | Não                    | Não                |
+| `POST` | `/api/login`       | Autenticar um usuário e obter token        | Não                    | Não                |
+| `POST` | `/api/logout`      | Invalidar o token do usuário logado        | Sim (Sanctum Token)    | Não                |
+| `GET`  | `/api/user`        | Obter dados do usuário autenticado         | Sim (Sanctum Token)    | Não                |
+| `GET`  | `/api/titulos`     | Listar todos os títulos (ou paginados)     | Sim (Sanctum Token)    | Não                |
+| `GET`  | `/api/titulos/{id}`| Obter detalhes de um título específico      | Sim (Sanctum Token)    | Não                |
+| `POST` | `/api/titulos`     | Criar um novo título                       | Sim (Sanctum Token)    | Sim                |
+| `PUT`  | `/api/titulos/{id}`| Atualizar um título existente (usar POST com `_method=PUT` para FormData) | Sim (Sanctum Token) | Sim |
+| `DELETE`| `/api/titulos/{id}`| Deletar um título                          | Sim (Sanctum Token)    | Sim                |
+| `GET`  | `/api/generos`     | Listar todos os gêneros (para formulários) | Sim (Sanctum Token)    | Não (ou Admin)     |
+| `GET`  | `/api/diretores`   | Listar todos os diretores (para formulários)| Sim (Sanctum Token)    | Não (ou Admin)     |
 
 </div>
 
+> 📋 **Coleção Postman detalhada:** [Acesse aqui](https://drive.google.com/file/d/1VzOATnBPGUXW26RavbBMc5rbIl5wsywL/view?usp=drive_link) <!-- Substitua pelo seu link final, se diferente -->
 
 ---
 
-## 🖥️ Configuração do Frontend
+## 🖥️ Frontend (`recruiting-laon-frontend`)
+
+A interface do usuário foi desenvolvida com Next.js (utilizando o App Router) e React, com TypeScript para tipagem estática, e estilizada com Bootstrap e CSS Modules, seguindo o design de referência do Figma.
 
 <details>
-<summary>🔧 <strong>Pré-requisitos</strong></summary>
+<summary>🔧 <strong>Pré-requisitos para o Frontend</strong></summary>
 
-- Node.js >= 16.x
+- Node.js
 - NPM ou Yarn
 
 </details>
 
-### 🚀 Instalação Rápida
+### 🚀 Instalação e Configuração (Frontend)
 
-```bash
-# Navegue para o frontend
-cd recruiting-laon-frontend
-
-# Instale dependências
-npm install
-# ou
-yarn install
-
-# Configure variáveis de ambiente
-# Crie .env.local com:
-echo "NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api" > .env.local
-
-# Inicie o servidor de desenvolvimento
-npm run dev
-# ou
-yarn dev
-```
-
-> 🌐 **Aplicação disponível em:** `http://localhost:3000`
+1.  **Navegue até a pasta do frontend:**
+    ```bash
+    cd recruiting-laon-frontend
+    ```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    # ou
+    # yarn install
+    ```
+3.  **Configure as variáveis de ambiente:**
+    * Crie um arquivo `.env.local` na raiz da pasta do frontend.
+    * Adicione as seguintes variáveis (ajuste a URL da API se necessário):
+      ```env
+      NEXT_PUBLIC_LARAVEL_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+      AUTH_SECRET=gere_um_secret_forte_aqui_ex_openssl_rand_base64_32
+      ```
+      * **Importante:** Substitua `gere_um_secret_forte_aqui...` por um segredo real e forte.
+4.  **Inicie o servidor de desenvolvimento do Next.js:**
+    ```bash
+    npm run dev
+    # ou
+    # yarn dev
+    ```
+> 🌐 A aplicação web estará disponível em: `http://localhost:3000` (ou outra porta, verifique o console).
 
 ---
 
@@ -199,105 +237,90 @@ yarn dev
 <div align="center">
 
 ### 🔐 Tela de Login
-<img src="URL_DA_IMAGEM_LOGIN_AQUI" alt="Tela de Login" width="400"/>
 
-### 📱 Tela de Listagem  
-<img src="URL_DA_IMAGEM_LISTAGEM_AQUI" alt="Tela de Listagem" width="600"/>
+<img src="images\Login.png" alt="Tela de Login" width="600"/>
 
-### 📄 Tela de Detalhes
-<img src="URL_DA_IMAGEM_DETALHES_AQUI" alt="Tela de Detalhes" width="600"/>
+### 🎬 Dashboard Principal (Catálogo)
 
-</div>
+<img src="images\catalogos.png" alt="Dashboard do Catálogo" width="700"/>
 
----
+### 📄 Tela de Detalhes do Título
+<img src="images\info.png" alt="Tela de Detalhes do Título" width="700"/>
 
-## 📱 App Mobile (Opcional)
-
-<details>
-<summary>📱 <strong>Configuração React Native + Expo</strong></summary>
-
-### Pré-requisitos
-- Node.js >= 16.x
-- NPM ou Yarn  
-- Expo CLI
-- Emulador Android/iOS ou Expo Go
-
-### Instalação
-```bash
-# Navegue para o app
-cd recruiting-laon-app
-
-# Instale dependências
-npm install
-
-# Inicie o Metro Bundler
-npm start
-```
-
-</details>
-
----
-
-## 🚀 Deploy
-
-<div align="center">
-
-| Ambiente | Status | Link |
-|----------|--------|------|
-| 🔗 **API Backend** | ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge) | [Link para API](SEU_LINK_DEPLOY_API) |
-| 🌐 **Frontend Web** | ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge) | [Link para Web App](SEU_LINK_DEPLOY_WEB) |
-| 📱 **Mobile App** | ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge) | Em breve |
+### 🛠️ Painel de Administração (CRUD de Títulos)
+<img src="images\dashboardaddm.png" alt="Painel de Administração" width="700"/>
 
 </div>
 
 ---
+
+
+
 
 ## 🎯 Funcionalidades Implementadas
 
-- [x] 🔐 **Sistema de Autenticação** (registro/login)
-- [x] 🎥 **Catálogo de Filmes e Séries**
-- [x] 📝 **Detalhes completos dos títulos**
-- [x] 👨‍💼 **Painel administrativo**
-- [x] 🔍 **API RESTful completa**
-- [x] 📱 **Interface responsiva**
-- [ ] 🔍 **Sistema de busca avançada**
-- [ ] ⭐ **Sistema de avaliações**
-- [ ] 📱 **App mobile**
+- [x] 🔐 **Sistema de Autenticação Completo** (Registro, Login, Logout via API e Frontend)
+- [x] 🎥 **Catálogo de Filmes e Séries** (Listagem e separação por tipo)
+- [x] 📝 **Página de Detalhes dos Títulos** (Exibição de informações completas)
+- [x] 🛡️ **Autorização baseada em Role** (Usuário comum vs. Administrador)
+- [x] 👨‍💼 **Painel Administrativo Básico** (Listagem de títulos com ações CRUD)
+- [x] ✨ **Funcionalidade de Criar Títulos** (Admin, via modal no frontend e API)
+- [x] ✏️ **Funcionalidade de Editar Títulos** (Admin, via modal no frontend e API)
+- [x] 🗑️ **Funcionalidade de Deletar Títulos** (Admin, via interface e API)
+- [x] 🖼️ **Upload e Gerenciamento de Imagens de Capa** (Admin, via backend Laravel)
+- [x] 📄 **Paginação de Dados** (No painel de admin e potencialmente no catálogo)
+- [x] 🎨 **Interface Responsiva** (Utilizando Bootstrap e CSS customizado)
+- [x] ⚙️ **API RESTful Robusta** com Laravel
+- [ ] 🔍 **Sistema de Busca Avançada** no catálogo
+- [ ] ⭐ **Sistema de Avaliações** pelos usuários
+- [ ] 📱 **Desenvolvimento do App Mobile** 
 
 ---
 
 ## 🤔 Desafios e Aprendizados
 
-Durante o desenvolvimento, enfrentei e superei diversos desafios:
+Durante o desenvolvimento deste projeto, enfrentei e superei diversos desafios técnicos e conceituais, que contribuíram significativamente para meu aprendizado:
 
-> **🔧 Integração Laravel + React:** Configuração do CORS e autenticação via Sanctum
-> 
-> **📱 Design Responsivo:** Implementação fiel ao design do Figma
-> 
-> **🔐 Segurança:** Validação de dados e proteção de rotas
-> 
-> **📊 Performance:** Otimização de queries e carregamento de dados
+> **🔧 Integração Backend-Frontend:** A configuração da autenticação com Laravel Sanctum e NextAuth.js, incluindo o fluxo de tokens e a propagação de roles (como `is_admin`) para a sessão do frontend, exigiu atenção aos detalhes e depuração cuidadosa. A sincronização entre as expectativas do `Auth::attempt()` do Laravel e os dados enviados pelo NextAuth foi um aprendizado chave.
+>
+> **🔄 Gerenciamento de Estado e Efeitos no React/Next.js:** Lidar com loops de requisição no `useEffect` devido a dependências instáveis (como objetos de sessão ou funções de callback) e refatorar para usar `useCallback` e dependências primitivas de forma correta foi um desafio importante para garantir a performance e estabilidade da interface de administração.
+>
+> **🖼️ Upload de Arquivos e CRUD Completo:** Implementar o upload de imagens de capa no formulário de admin, garantindo que o backend Laravel processe `FormData` corretamente (especialmente para requisições `PUT` simuladas com `_method`), e que o frontend envie os dados de forma adequada.
+>
+> **🛡️ Autorização e Proteção de Rotas:** Configurar Gates no Laravel e o middleware no Next.js para proteger rotas de administração e garantir que apenas usuários autorizados possam realizar operações CRUD foi um exercício prático valioso em segurança de aplicações.
+>
+> **🐛 Depuração de Comportamentos Inesperados:** A investigação de por que o middleware do Next.js não parecia executar (devido à sua localização incorreta quando se usa o diretório `src/`) e por que o `schema:dump` estava interferindo nas migrations foram momentos de aprendizado sobre o funcionamento interno e as convenções do Next.js.
 
 **Principais aprendizados:**
-- Aprofundamento em Laravel Sanctum
-- Melhores práticas de estruturação de APIs
-- Integração frontend/backend eficiente
-- Implementação de interfaces responsivas
+- Aprofundamento significativo em NextAuth.js e sua integração com backends customizados.
+- Melhor compreensão das nuances do App Router do Next.js, Server Components, Client Components e Middleware.
+- Prática robusta com o sistema de arquivos e upload no Laravel (Storage, links simbólicos).
+- Reforço na importância da depuração sistemática e da verificação de configurações em todas as camadas da aplicação.
+- Valor da componentização e da separação de responsabilidades no frontend para manutenibilidade.
 
 ---
 
 ## 👨‍💻 Sobre o Desenvolvedor
 
 <div align="center">
-  <img src="https://github.com/ErickGCA" width="100" style="border-radius: 50%"/>
-  
-  **[Érick Gonçalves Cabral]**
-  
-  *Desenvolvedor Full Stack apaixonado por criar soluções inovadoras*
-  
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ErickGCA)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/erick-cabralgca/)
-  
+  <a href="https://github.com/ErickGCA">
+    <img src="images/eu.jpg" width="120" style="border-radius: 50%; border: 3px solid #00d4ff;" alt="Érick Gonçalves Cabral"/>
+  </a>
+  <br/>
+  <strong>Érick Gonçalves Cabral</strong>
+  <br/>
+  <em>Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e desafios de código.</em>
+  <br/><br/>
+  <a href="https://github.com/ErickGCA" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/erick-cabralgca/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <br/>
+  <a href="mailto:erickgcabral@gmail.com"> 
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
 </div>
 
 ---
@@ -305,23 +328,23 @@ Durante o desenvolvimento, enfrentei e superei diversos desafios:
 ## 🙏 Agradecimentos
 
 <div align="center">
-  
-**Agradeço à equipe da [Laon Labs](https://laonlabs.com) pela oportunidade de participar deste processo seletivo!**
-
-*Este projeto representa minha dedicação e paixão por desenvolvimento de software.*
-
----
-
-⭐ **Se este projeto foi útil, considere dar uma estrela!**
+  <br/>
+  <strong>Agradeço imensamente à equipe da <a href="https://laonlabs.com" target="_blank">Laon Labs</a> pela oportunidade de participar deste desafiador e gratificante processo seletivo!</strong>
+  <br/><br/>
+  <em>Este projeto representa minha dedicação, paixão por desenvolvimento de software e a busca contínua por aprendizado e excelência.</em>
+  <br/><br/>
 
 </div>
 
+---
+
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins de avaliação técnica.
+Este projeto foi desenvolvido exclusivamente para fins de avaliação técnica como parte do processo seletivo da Laon Labs.
 
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=ErickGCA_GITHUB&color=00d4ff&style=for-the-badge" alt="Profile Views"/>
+  <img src="https://komarev.com/ghpvc/?username=ErickGCA&color=00d4ff&style=for-the-badge&label=VISITAS+NO+PERFIL" alt="Profile Views"/>
+
 </div>
